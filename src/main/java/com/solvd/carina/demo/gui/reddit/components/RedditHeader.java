@@ -25,6 +25,8 @@ public class RedditHeader extends AbstractUIObject {
     private ExtendedWebElement notificationsButton;
     @FindBy(xpath = "//*[@id='expand-user-drawer-button']")
     private ExtendedWebElement profileButton;
+    @FindBy(css = "a#login-button")
+    private ExtendedWebElement loginButton;
 
     public RedditHeader(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
@@ -65,5 +67,13 @@ public class RedditHeader extends AbstractUIObject {
 
     public void clickProfileButton () {
         profileButton.click();
+    }
+
+    public boolean isLoginButtonClickable () {
+        return loginButton.isClickable();
+    }
+
+    public void clickLoginButton () {
+        loginButton.click();
     }
 }
