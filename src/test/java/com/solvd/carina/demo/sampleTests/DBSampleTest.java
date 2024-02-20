@@ -1,4 +1,4 @@
-package com.solvd.carina.demo;
+package com.solvd.carina.demo.sampleTests;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNull;

@@ -11,7 +11,7 @@
 
 	<test name="Soap API tests">
 		<classes>
-			<class name="com.solvd.carina.demo.SoapSampleTest" />
+			<class name="com.solvd.carina.demo.sampleTests.SoapSampleTest" />
 		</classes>
 	</test>
 

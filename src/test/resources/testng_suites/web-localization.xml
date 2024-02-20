@@ -18,7 +18,7 @@
 
     <test name="Wikipedia Localization Test">
         <classes>
-            <class name="com.solvd.carina.demo.WebLocalizationSample" >
+            <class name="com.solvd.carina.demo.sampleTests.WebLocalizationSample" >
                 <methods>
                     <include name="testLanguages" />
                 </methods>

@@ -29,5 +29,13 @@ public class RedditSubmitPage extends AbstractPage {
         super(driver);
     }
 
+    public boolean isChooseCommunityInputFieldPresent () {
+        return chooseCommunityInputField.isPresent();
+    }
+
+    public void typeChooseCommunity (String community) {
+        chooseCommunityInputField.type(community);
+    }
+
 
 }

@@ -1,5 +1,6 @@
 package com.solvd.carina.demo.gui.reddit.components;
 
+import com.solvd.carina.demo.gui.reddit.pages.RedditSubmitPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -49,8 +50,13 @@ public class RedditHeader extends AbstractUIObject {
         chatButton.click();
     }
 
-    public void clickCreateButton () {
+    public RedditSubmitPage clickCreateButton () {
         createButton.click();
+        return new RedditSubmitPage(getDriver());
+    }
+
+    public boolean isCreateButtonClickable () {
+        return createButton.isClickable();
     }
 
     public void clickNotificationsButton () {

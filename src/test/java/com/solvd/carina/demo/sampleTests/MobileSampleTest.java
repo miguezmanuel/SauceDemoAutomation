@@ -1,4 +1,4 @@
-package com.solvd.carina.demo;
+package com.solvd.carina.demo.sampleTests;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;

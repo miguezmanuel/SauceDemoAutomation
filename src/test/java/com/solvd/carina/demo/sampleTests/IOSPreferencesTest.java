@@ -1,4 +1,4 @@
-package com.solvd.carina.demo;
+package com.solvd.carina.demo.sampleTests;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;

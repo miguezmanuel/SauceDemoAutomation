@@ -1,4 +1,4 @@
-package com.solvd.carina.demo;
+package com.solvd.carina.demo.sampleTests;
 
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;

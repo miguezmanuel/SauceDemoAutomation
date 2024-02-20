@@ -1,4 +1,4 @@
-package com.solvd.carina.demo;
+package com.solvd.carina.demo.sampleTests;
 
 import java.lang.invoke.MethodHandles;
 import java.time.temporal.ChronoUnit;

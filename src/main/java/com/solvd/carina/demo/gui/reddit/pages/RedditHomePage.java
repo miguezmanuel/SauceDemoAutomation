@@ -14,5 +14,7 @@ public class RedditHomePage extends AbstractPage {
         super(driver);
     }
 
-
+    public RedditHeader getRedditHeader() {
+        return redditHeader;
+    }
 }
