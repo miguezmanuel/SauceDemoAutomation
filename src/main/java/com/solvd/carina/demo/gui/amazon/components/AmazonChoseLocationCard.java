@@ -18,6 +18,8 @@ public class AmazonChoseLocationCard extends AbstractUIObject {
     private ExtendedWebElement selectCountryButton;
     @FindBy(css = "a#GLUXCountryList_16")
     private ExtendedWebElement argentinaButton;
+    @FindBy(xpath = "//*[@id=\"GLUXZipError\"]::following-sibling")
+    private ExtendedWebElement zipCodeErrorText;
 
     public AmazonChoseLocationCard(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
@@ -45,5 +47,9 @@ public class AmazonChoseLocationCard extends AbstractUIObject {
 
     public void clickArgentinaButton () {
         argentinaButton.click();
+    }
+
+    public String getZipCodeErrorText () {
+        return zipCodeErrorText.getText();
     }
 }
