@@ -18,7 +18,7 @@ public class AmazonChoseLocationCard extends AbstractUIObject {
     private ExtendedWebElement selectCountryButton;
     @FindBy(xpath = "//a[@class='a-dropdown-link' and text()='%s']")
     private ExtendedWebElement countryToBeSelected;
-    @FindBy(xpath = "//*[@id=\"GLUXZipError\"]::following-sibling")
+    @FindBy(xpath = "(//div[@class='a-box a-alert-inline a-alert-inline-error'])[1]")
     private ExtendedWebElement zipCodeErrorText;
 
 

@@ -1,8 +1,0 @@
-[2024-02-21 08:34:45] [1] [WARN] Reporting disabled: using no op test run registrar
-[2024-02-21 08:34:45] [1] [INFO] TEST [WebTestAutomation - changeLocationToArgentinaTest] STARTED at [17:34:45 2024-02-21]
-[2024-02-21 08:34:45] [1] [INFO] Starting driver session...
-[2024-02-21 08:34:45] [1] [INFO] Set Chrome language to: en
-[2024-02-21 08:34:47] [1] [INFO] Driver session started.
-[2024-02-21 08:34:47] [1] [INFO] INFO: opening url 'https://www.amazon.com/'
-[2024-02-21 08:34:50] [1] [INFO] PASS: element 'deliverToButton' is clicked.
-[2024-02-21 08:34:52] [1] [INFO] PASS: element 'selectCountryButton' is clicked.
