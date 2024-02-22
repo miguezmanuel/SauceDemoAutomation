@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AmazonHomePage extends AbstractPage {
 
-    @FindBy()
+    @FindBy(css = "div#nav-belt")
     private AmazonHeader amazonHeader;
 
     @FindBy(css = "div#Condo")

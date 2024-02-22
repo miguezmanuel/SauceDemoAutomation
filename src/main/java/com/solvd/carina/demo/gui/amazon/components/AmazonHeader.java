@@ -6,6 +6,8 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AmazonHeader extends AbstractUIObject {
 
     @FindBy(css = "a#nav-logo-sprites")
@@ -26,6 +28,9 @@ public class AmazonHeader extends AbstractUIObject {
     private ExtendedWebElement returnsAndOrdersButton;
     @FindBy(css = "a#nav-cart")
     private ExtendedWebElement cartButton;
+
+    @FindBy(xpath = "//div[@class='s-suggestion-trending-container']")
+    private List<ExtendedWebElement> searchResultsList;
 
     public AmazonHeader(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);

@@ -3,6 +3,7 @@ package com.solvd.carina.demo.gui.reddit.components;
 import com.solvd.carina.demo.gui.reddit.pages.RedditSubmitPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -34,6 +35,12 @@ public class RedditHeader extends AbstractUIObject {
 
     public void typeSearchBar (String searchInput) {
         searchBarInputField.type(searchInput);
+    }
+
+    public void typeSearchB (String searchInput) {
+        while(!searchInput.isEmpty()){
+            searchBarInputField.sendKeys(Keys.BACK_SPACE);
+        }
     }
 
     public void clickNavigationButton () {
