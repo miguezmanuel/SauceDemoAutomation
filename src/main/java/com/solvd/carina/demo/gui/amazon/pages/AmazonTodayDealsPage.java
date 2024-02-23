@@ -6,9 +6,8 @@ import com.solvd.carina.demo.gui.amazon.components.AmazonSearchBar;
 import com.solvd.carina.demo.gui.amazon.components.AmazonShopNavigationBar;
 import org.openqa.selenium.WebDriver;
 
-public class AmazonHomePage extends AmazonAbstractPage {
-
-    public AmazonHomePage(WebDriver driver) {
+public class AmazonTodayDealsPage extends AmazonAbstractPage {
+    public AmazonTodayDealsPage(WebDriver driver) {
         super(driver);
     }
 
