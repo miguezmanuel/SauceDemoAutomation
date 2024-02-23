@@ -2,6 +2,7 @@ package com.solvd.carina.demo.gui.amazon.pages;
 
 import com.solvd.carina.demo.gui.amazon.components.AmazonChoseLocationCard;
 import com.solvd.carina.demo.gui.amazon.components.AmazonHeader;
+import com.solvd.carina.demo.gui.amazon.components.AmazonSearchBar;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,9 @@ public class AmazonHomePage extends AbstractPage {
     @FindBy(css = "div#Condo")
     private AmazonChoseLocationCard amazonChoseLocationCard;
 
+    @FindBy(css = "div#nav-search")
+    private AmazonSearchBar amazonSearchBar;
+
     public AmazonHomePage(WebDriver driver) {
         super(driver);
     }
@@ -24,5 +28,9 @@ public class AmazonHomePage extends AbstractPage {
 
     public AmazonChoseLocationCard getAmazonChoseLocationCard() {
         return amazonChoseLocationCard;
+    }
+
+    public AmazonSearchBar getAmazonSearchBar() {
+        return amazonSearchBar;
     }
 }

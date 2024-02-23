@@ -14,12 +14,6 @@ public class AmazonHeader extends AbstractUIObject {
     private ExtendedWebElement amazonLogoButton;
     @FindBy(css = "a#nav-global-location-popover-link")
     private ExtendedWebElement deliverToButton;
-    @FindBy(xpath = "//*[@aria-describedby='searchDropdownDescription']")
-    private ExtendedWebElement searchInButton;
-    @FindBy(css = "input#twotabsearchtextbox")
-    private ExtendedWebElement searchInputField;
-    @FindBy(css = "input#nav-search-submit-button")
-    private ExtendedWebElement searchButton;
     @FindBy(xpath = "//*[@id='nav-tools']//span[@class='icp-nav-link-inner']")
     private ExtendedWebElement languageButton;
     @FindBy(css = "a#nav-link-accountList")
@@ -46,18 +40,6 @@ public class AmazonHeader extends AbstractUIObject {
 
     public void clickDeliverButton () {
         deliverToButton.click();
-    }
-
-    public void clickSearchInButton () {
-        searchInButton.click();
-    }
-
-    public void typeSearchInputField (String searchInput) {
-        searchInputField.type(searchInput);
-    }
-
-    public void clickSearchButton () {
-        searchButton.click();
     }
 
     public void hoverLanguageButton () {
