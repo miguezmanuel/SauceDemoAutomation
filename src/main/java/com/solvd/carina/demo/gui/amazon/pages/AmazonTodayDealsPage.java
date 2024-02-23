@@ -1,12 +1,14 @@
 package com.solvd.carina.demo.gui.amazon.pages;
 
-import com.solvd.carina.demo.gui.amazon.components.AmazonChoseLocationCard;
-import com.solvd.carina.demo.gui.amazon.components.AmazonHeader;
-import com.solvd.carina.demo.gui.amazon.components.AmazonSearchBar;
-import com.solvd.carina.demo.gui.amazon.components.AmazonShopNavigationBar;
+import com.solvd.carina.demo.gui.amazon.components.*;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
 public class AmazonTodayDealsPage extends AmazonAbstractPage {
+
+    @FindBy(xpath = "//div[@class='a-row a-carousel-controls a-carousel-row a-carousel-has-buttons']")
+    private AmazonDealsCarousel amazonDealsCarousel;
+
     public AmazonTodayDealsPage(WebDriver driver) {
         super(driver);
     }
