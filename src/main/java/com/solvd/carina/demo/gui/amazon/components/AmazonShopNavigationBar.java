@@ -25,5 +25,33 @@ public class AmazonShopNavigationBar extends AbstractUIObject {
         super(driver, searchContext);
     }
 
+    public boolean isSideMenuButtonClickable () {
+        return sideMenuButton.isClickable();
+    }
+
+    public void clickSideMenuButton () {
+        sideMenuButton.click();
+    }
+
+    public void clickTodayDealsButton () {
+        todayDealsButton.click();
+    }
+
+    public void clickCustomerServiceButton () {
+        customerServiceButton.click();
+    }
+
+    public void clickRegistryButton () {
+        registryButton.click();
+    }
+
+    public void clickGiftCardsButton () {
+        giftCardsButton.click();
+    }
+
+    public void ClickSellButton () {
+        sellButton.click();
+    }
+
 
 }
