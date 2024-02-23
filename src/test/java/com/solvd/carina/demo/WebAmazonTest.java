@@ -55,11 +55,21 @@ public class WebAmazonTest implements IAbstractTest {
         }
     }
 
+    @Test
     public void checkSearchResultsList () {
         AmazonHomePage amazonHomePage = new AmazonHomePage(getDriver());
         AmazonHeader amazonHeader = amazonHomePage.getAmazonHeader();
         AmazonSearchBar amazonSearchBar = amazonHomePage.getAmazonSearchBar();
 
         amazonHomePage.open();
+        amazonSearchBar.typeSearchInputField("Iphone");
+        List<String> iphoneResultsList = amazonSearchBar.getSearchResultsListWithContainingKeys("Iphone");
+
+        for (int i = 0; i < iphoneResultsList.size(); i++) {
+            String element = iphoneResultsList.get(i);
+            Boolean result = element.contains("Iphone") ? true : false;
+            Assert.assertTrue(result, "Search results list is not returning " + element + " values");
+        }
     }
+
 }

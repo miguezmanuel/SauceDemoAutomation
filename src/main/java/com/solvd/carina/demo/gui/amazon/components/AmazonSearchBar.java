@@ -16,7 +16,7 @@ public class AmazonSearchBar extends AbstractUIObject {
     private List <ExtendedWebElement> categorySelectList;
     @FindBy(css = "input#twotabsearchtextbox")
     private ExtendedWebElement searchInputField;
-    @FindBy()
+    @FindBy(xpath = "//div[@class='left-pane-results-container']/div")
     private List<ExtendedWebElement> searchResultsList;
     @FindBy(css = "input#nav-search-submit-button")
     private ExtendedWebElement searchButton;
@@ -45,6 +45,20 @@ public class AmazonSearchBar extends AbstractUIObject {
             category = categorySelectList.get(i).toString();
             if (category.contains(containingKeys)) {
                 list.add(category);
+            }
+        }
+
+        return list;
+    }
+
+    public List<String> getSearchResultsListWithContainingKeys (String containingKeys) {
+        List<String> list = null;
+        String element;
+
+        for (int i = 0; i < searchResultsList.size(); i++) {
+            element = searchResultsList.get(i).toString();
+            if (element.contains(containingKeys)) {
+                list.add(element);
             }
         }
 
