@@ -5,9 +5,13 @@ import com.solvd.carina.demo.gui.amazon.components.AmazonHeader;
 import com.solvd.carina.demo.gui.amazon.components.AmazonSearchBar;
 import com.solvd.carina.demo.gui.amazon.pages.AmazonHomePage;
 import com.zebrunner.carina.core.IAbstractTest;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.List;
 
 public class WebAmazonTest implements IAbstractTest {
@@ -63,7 +67,9 @@ public class WebAmazonTest implements IAbstractTest {
 
         amazonHomePage.open();
         amazonSearchBar.typeSearchInputField("Iphone");
+
         List<String> iphoneResultsList = amazonSearchBar.getSearchResultsListWithContainingKeys("Iphone");
+
 
         for (int i = 0; i < iphoneResultsList.size(); i++) {
             String element = iphoneResultsList.get(i);
