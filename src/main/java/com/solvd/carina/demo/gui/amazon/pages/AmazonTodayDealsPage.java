@@ -13,6 +13,10 @@ public class AmazonTodayDealsPage extends AmazonAbstractPage {
         super(driver);
     }
 
+    public AmazonDealsCarousel getAmazonDealsCarousel() {
+        return amazonDealsCarousel;
+    }
+
     @Override
     public AmazonHeader getAmazonHeader() {
         return super.getAmazonHeader();

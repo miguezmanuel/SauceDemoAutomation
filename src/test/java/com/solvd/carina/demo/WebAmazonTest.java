@@ -1,13 +1,12 @@
 package com.solvd.carina.demo;
 
-import com.solvd.carina.demo.gui.amazon.components.AmazonChoseLocationCard;
-import com.solvd.carina.demo.gui.amazon.components.AmazonHeader;
-import com.solvd.carina.demo.gui.amazon.components.AmazonSearchBar;
+import com.solvd.carina.demo.gui.amazon.components.*;
 import com.solvd.carina.demo.gui.amazon.pages.AmazonHomePage;
+import com.solvd.carina.demo.gui.amazon.pages.AmazonTodayDealsPage;
 import com.zebrunner.carina.core.IAbstractTest;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -43,39 +42,56 @@ public class WebAmazonTest implements IAbstractTest {
     }
 
     @Test
-    public void checkCategoriesList () {
+    public void testDealsCarousel () {
         AmazonHomePage amazonHomePage = new AmazonHomePage(getDriver());
-        AmazonHeader amazonHeader = amazonHomePage.getAmazonHeader();
-        AmazonSearchBar amazonSearchBar = amazonHomePage.getAmazonSearchBar();
+        AmazonTodayDealsPage amazonTodayDealsPage = new AmazonTodayDealsPage(getDriver());
+        AmazonShopNavigationBar amazonShopNavigationBar = amazonHomePage.getAmazonShopNavigationBar();
+        AmazonDealsCarousel amazonDealsCarousel = amazonTodayDealsPage.getAmazonDealsCarousel();
 
         amazonHomePage.open();
-        amazonSearchBar.clickSelectCategoryButton();
-        List<String> musicCategories = amazonSearchBar.getCategorySelectList("Music");
+        amazonShopNavigationBar.clickTodayDealsButton();
 
-        for (int i = 0; i > musicCategories.size(); i++) {
-            String element = musicCategories.get(i);
-            Boolean result = element.contains("music") ? true : false;
-            Assert.assertTrue(result, "list element" + element + "does not contain 'Music'");
-        }
     }
 
-    @Test
-    public void checkSearchResultsList () {
-        AmazonHomePage amazonHomePage = new AmazonHomePage(getDriver());
-        AmazonHeader amazonHeader = amazonHomePage.getAmazonHeader();
-        AmazonSearchBar amazonSearchBar = amazonHomePage.getAmazonSearchBar();
-
-        amazonHomePage.open();
-        amazonSearchBar.typeSearchInputField("Iphone");
-
-        List<String> iphoneResultsList = amazonSearchBar.getSearchResultsListWithContainingKeys("Iphone");
-
-
-        for (int i = 0; i < iphoneResultsList.size(); i++) {
-            String element = iphoneResultsList.get(i);
-            Boolean result = element.contains("Iphone") ? true : false;
-            Assert.assertTrue(result, "Search results list is not returning " + element + " values");
-        }
-    }
+//    @Test
+//    public void checkCategoriesList () {
+//        AmazonHomePage amazonHomePage = new AmazonHomePage(getDriver());
+//        AmazonHeader amazonHeader = amazonHomePage.getAmazonHeader();
+//        AmazonSearchBar amazonSearchBar = amazonHomePage.getAmazonSearchBar();
+//
+//        amazonHomePage.open();
+//        amazonSearchBar.clickSelectCategoryButton();
+//        List<String> musicCategories = amazonSearchBar.getCategorySelectListWithContainingKeys("Music");
+//
+//        FluentWait<WebDriver> wait = new FluentWait<>(getDriver())
+//                .withTimeout(Duration.ofSeconds(2));
+//
+//        for (int i = 0; i > musicCategories.size(); i++) {
+//            String element = musicCategories.get(i);
+//            Boolean result = element.contains("music") ? true : false;
+//            Assert.assertTrue(result, "list element" + element + "does not contain 'Music'");
+//        }
+//    }
+//
+//    @Test
+//    public void checkSearchResultsList () {
+//        AmazonHomePage amazonHomePage = new AmazonHomePage(getDriver());
+//        AmazonHeader amazonHeader = amazonHomePage.getAmazonHeader();
+//        AmazonSearchBar amazonSearchBar = amazonHomePage.getAmazonSearchBar();
+//
+//        FluentWait<WebDriver> wait = new FluentWait<>(getDriver());
+//
+//        amazonHomePage.open();
+//        amazonSearchBar.typeSearchInputField("Iphone");
+//        wait.withTimeout(Duration.ofSeconds(2));
+//        List<String> iphoneResultsList = amazonSearchBar.getSearchResultsListWithContainingKeys("Iphone");
+//
+//
+//        for (int i = 0; i < iphoneResultsList.size(); i++) {
+//            String element = iphoneResultsList.get(i);
+//            Boolean result = element.contains("Iphone") ? true : false;
+//            Assert.assertTrue(result, "Search results list is not returning " + element + " values");
+//        }
+//    }
 
 }

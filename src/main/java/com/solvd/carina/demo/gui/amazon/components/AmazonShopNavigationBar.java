@@ -1,5 +1,6 @@
 package com.solvd.carina.demo.gui.amazon.components;
 
+import com.solvd.carina.demo.gui.amazon.pages.AmazonTodayDealsPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -33,8 +34,9 @@ public class AmazonShopNavigationBar extends AbstractUIObject {
         sideMenuButton.click();
     }
 
-    public void clickTodayDealsButton () {
+    public AmazonTodayDealsPage clickTodayDealsButton () {
         todayDealsButton.click();
+        return new AmazonTodayDealsPage(getDriver());
     }
 
     public void clickCustomerServiceButton () {

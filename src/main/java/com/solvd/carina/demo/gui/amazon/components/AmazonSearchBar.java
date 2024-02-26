@@ -2,17 +2,11 @@ package com.solvd.carina.demo.gui.amazon.components;
 
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
-import org.openqa.selenium.By;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.xml.sax.Locator;
 
-import java.time.Duration;
 import java.util.List;
 
 public class AmazonSearchBar extends AbstractUIObject {
@@ -46,7 +40,7 @@ public class AmazonSearchBar extends AbstractUIObject {
         searchButton.click();
     }
 
-    public List<String> getCategorySelectList (String containingKeys) {
+    public List<String> getCategorySelectListWithContainingKeys(String containingKeys) {
         String category;
         List<String> list = null;
 
@@ -74,16 +68,10 @@ public class AmazonSearchBar extends AbstractUIObject {
         return list;
     }
 
-    public List<String> transformListTo (List<ExtendedWebElement> listResults) {
-        List<String> list = null;
-        String element;
-
-        for (int i = 0; i < searchResultsList.size(); i++) {
-            element = searchResultsList.get(i).toString();
-        }
-
-        return list;
+    public boolean isSearchResultsListEmpty () {
+        return searchResultsList.isEmpty();
     }
+
 
 
 }
