@@ -4,6 +4,7 @@ import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
@@ -17,9 +18,13 @@ public class AmazonDealsCarousel extends AbstractUIObject {
     private ExtendedWebElement goToRightButton;
 
     @FindBy(xpath = "//li[@class='a-carousel-card GridPresets-module__gridPresetElement_LK6M4HpuBZHEa3NTWKSb9']")
-    private List<ExtendedWebElement> carouselElements;
+    private List<WebElement> carouselElements;
 
     public AmazonDealsCarousel(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
+    }
+
+    public List<WebElement> getCarouselElements () {
+        return carouselElements;
     }
 }

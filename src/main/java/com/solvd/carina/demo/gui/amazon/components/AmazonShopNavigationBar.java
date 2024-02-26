@@ -11,7 +11,7 @@ public class AmazonShopNavigationBar extends AbstractUIObject {
 
     @FindBy(css = "a#nav-hamburger-menu")
     private ExtendedWebElement sideMenuButton;
-    @FindBy(xpath = "//a[@class='nav-a  ' and text()='Today's Deals']")
+    @FindBy(xpath = "//*[@id='nav-xshop']/a[1]")
     private ExtendedWebElement todayDealsButton;
     @FindBy(xpath = "//a[@class='nav-a  ' and text()='Customer Service']")
     private ExtendedWebElement customerServiceButton;

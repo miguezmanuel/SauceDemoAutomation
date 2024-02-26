@@ -4,6 +4,7 @@ import com.solvd.carina.demo.gui.amazon.components.*;
 import com.solvd.carina.demo.gui.amazon.pages.AmazonHomePage;
 import com.solvd.carina.demo.gui.amazon.pages.AmazonTodayDealsPage;
 import com.zebrunner.carina.core.IAbstractTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -48,8 +49,14 @@ public class WebAmazonTest implements IAbstractTest {
         AmazonShopNavigationBar amazonShopNavigationBar = amazonHomePage.getAmazonShopNavigationBar();
         AmazonDealsCarousel amazonDealsCarousel = amazonTodayDealsPage.getAmazonDealsCarousel();
 
+        FluentWait fluentWait = new FluentWait<>(getDriver())
+                        .withTimeout(Duration.ofSeconds(5))
+                        .pollingEvery(Duration.ofSeconds(1));
+
         amazonHomePage.open();
         amazonShopNavigationBar.clickTodayDealsButton();
+        fluentWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//li[@class='a-carousel-card GridPresets-module__gridPresetElement_LK6M4HpuBZHEa3NTWKSb9']"), 1));
+
 
     }
 
