@@ -20,6 +20,8 @@ public class AmazonChoseLocationCard extends AbstractUIObject {
     private ExtendedWebElement countryToBeSelected;
     @FindBy(xpath = "(//div[@class='a-box a-alert-inline a-alert-inline-error'])[1]")
     private ExtendedWebElement zipCodeErrorText;
+    @FindBy(xpath = "//button[@name='glowDoneButton']")
+    private ExtendedWebElement doneButton;
 
 
     public AmazonChoseLocationCard(WebDriver driver, SearchContext searchContext) {
@@ -52,5 +54,9 @@ public class AmazonChoseLocationCard extends AbstractUIObject {
 
     public String getZipCodeErrorText () {
         return zipCodeErrorText.getText();
+    }
+
+    public void clickDoneButton () {
+        doneButton.click();
     }
 }

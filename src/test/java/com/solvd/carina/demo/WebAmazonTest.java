@@ -48,12 +48,19 @@ public class WebAmazonTest implements IAbstractTest {
         AmazonTodayDealsPage amazonTodayDealsPage = new AmazonTodayDealsPage(getDriver());
         AmazonShopNavigationBar amazonShopNavigationBar = amazonHomePage.getAmazonShopNavigationBar();
         AmazonDealsCarousel amazonDealsCarousel = amazonTodayDealsPage.getAmazonDealsCarousel();
+        AmazonHeader amazonHeader = amazonHomePage.getAmazonHeader();
+        AmazonChoseLocationCard amazonChoseLocationCard = amazonHomePage.getAmazonChoseLocationCard();
 
         FluentWait fluentWait = new FluentWait<>(getDriver())
-                        .withTimeout(Duration.ofSeconds(5))
-                        .pollingEvery(Duration.ofSeconds(1));
+                .withTimeout(Duration.ofSeconds(15))
+                .pollingEvery(Duration.ofSeconds(1));
 
         amazonHomePage.open();
+        amazonHeader.clickDeliverButton();
+        amazonChoseLocationCard.clickSelectCountryButton();
+        amazonChoseLocationCard.selectCountry("Argentina");
+        amazonChoseLocationCard.clickDoneButton();
+
         amazonShopNavigationBar.clickTodayDealsButton();
         fluentWait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//li[@class='a-carousel-card GridPresets-module__gridPresetElement_LK6M4HpuBZHEa3NTWKSb9']"), 1));
 
