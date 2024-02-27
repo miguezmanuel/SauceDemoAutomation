@@ -13,6 +13,8 @@ public class SwagLabsLoginPage extends AbstractPage {
     private ExtendedWebElement usernameInputField;
     @FindBy(xpath = "//*[@placeholder='Password']")
     private ExtendedWebElement passwordInputField;
+    @FindBy(xpath = "//*[@placeholder='error']")
+    private ExtendedWebElement errorLoginMessage;
 
     public SwagLabsLoginPage(WebDriver driver) {
         super(driver);
@@ -20,6 +22,10 @@ public class SwagLabsLoginPage extends AbstractPage {
 
     public boolean isTitlePresent () {
         return titleText.isPresent();
+    }
+
+    public boolean isErrorPresent () {
+        return errorLoginMessage.isPresent();
     }
 
     public void typeUsernameInputField (String username) {
