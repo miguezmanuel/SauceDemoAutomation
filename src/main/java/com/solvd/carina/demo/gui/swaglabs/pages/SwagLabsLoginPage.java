@@ -7,11 +7,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class SwagLabsLoginPage extends AbstractPage {
 
-    @FindBy()
+    @FindBy(xpath = "//*[@class='login_logo']")
     public ExtendedWebElement titleText;
-    @FindBy()
+    @FindBy(xpath = "//*[@placeholder='Username']")
     private ExtendedWebElement usernameInputField;
-    @FindBy()
+    @FindBy(xpath = "//*[@placeholder='Password']")
     private ExtendedWebElement passwordInputField;
 
     public SwagLabsLoginPage(WebDriver driver) {
