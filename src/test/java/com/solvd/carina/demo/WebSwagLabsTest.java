@@ -1,5 +1,6 @@
 package com.solvd.carina.demo;
 
+import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsLoginForm;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.Assert;
@@ -10,11 +11,12 @@ public class WebSwagLabsTest implements IAbstractTest {
     @Test
     public void loginTest () {
         SwagLabsLoginPage swagLabsLoginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm swagLabsLoginForm = swagLabsLoginPage.getSwagLabsLoginForm();
 
         swagLabsLoginPage.open();
         Assert.assertTrue(swagLabsLoginPage.isTitlePresent());
 
-        swagLabsLoginPage.typeUsernameInputField("standard_user");
-        swagLabsLoginPage.typePasswordInputField("secret_sauce");
+        swagLabsLoginForm.typeUsernameInputField("standard_user");
+        swagLabsLoginForm.typePasswordInputField("secret_sauce");
     }
 }
