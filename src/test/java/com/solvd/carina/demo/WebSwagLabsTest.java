@@ -18,5 +18,24 @@ public class WebSwagLabsTest implements IAbstractTest {
 
         swagLabsLoginForm.typeUsernameInputField("standard_user");
         swagLabsLoginForm.typePasswordInputField("secret_sauce");
+
+        Assert.assertTrue(swagLabsLoginForm.isLoginButtonClickable(), "Login button is not clickable");
+        swagLabsLoginForm.clickLoginButton();
+    }
+
+    @Test
+    public void checkLoginErrorMessageTest () {
+        SwagLabsLoginPage swagLabsLoginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm swagLabsLoginForm = swagLabsLoginPage.getSwagLabsLoginForm();
+
+        swagLabsLoginPage.open();
+
+        swagLabsLoginForm.typeUsernameInputField("error");
+        swagLabsLoginForm.typePasswordInputField("error");
+        swagLabsLoginForm.clickLoginButton();
+
+        Assert.assertTrue(swagLabsLoginForm.isErrorPresent(), "Error is not shown");
+        Assert.assertEquals(swagLabsLoginForm.returnErrorMessage(), "Epic sadface: Username and password do not match any user in this service");
+
     }
 }

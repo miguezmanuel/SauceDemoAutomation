@@ -12,16 +12,21 @@ public class SwagLabsLoginForm extends AbstractUIObject {
     private ExtendedWebElement usernameInputField;
     @FindBy(xpath = "//*[@placeholder='Password']")
     private ExtendedWebElement passwordInputField;
-    @FindBy(xpath = "//*[@placeholder='error']")
+    @FindBy(xpath = "//h3[@data-test='error']")
     private ExtendedWebElement errorLoginMessage;
+    @FindBy(xpath = "//input[@id='login-button']")
+    private ExtendedWebElement loginButton;
 
     public SwagLabsLoginForm(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
-
     public boolean isErrorPresent () {
         return errorLoginMessage.isPresent();
+    }
+
+    public String returnErrorMessage () {
+        return errorLoginMessage.getText();
     }
 
     public void typeUsernameInputField (String username) {
@@ -30,6 +35,19 @@ public class SwagLabsLoginForm extends AbstractUIObject {
 
     public void typePasswordInputField (String password) {
         passwordInputField.type(password);
+    }
+
+    public boolean isLoginButtonClickable () {
+        return loginButton.isClickable();
+    }
+
+    public void clickLoginButton () {
+        loginButton.click();
+    }
+
+    public void login () {
+        usernameInputField.type("standard_user");
+        passwordInputField.type("secret_sauce");
     }
 
 }
