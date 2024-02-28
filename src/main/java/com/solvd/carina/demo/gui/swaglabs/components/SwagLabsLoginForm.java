@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class SwagLabsLoginForm extends AbstractUIObject {
 
-    @FindBy(xpath = "//*[@class='login_logo']")
-    public ExtendedWebElement titleText;
     @FindBy(xpath = "//*[@placeholder='Username']")
     private ExtendedWebElement usernameInputField;
     @FindBy(xpath = "//*[@placeholder='Password']")
@@ -21,9 +19,6 @@ public class SwagLabsLoginForm extends AbstractUIObject {
         super(driver, searchContext);
     }
 
-    public boolean isTitlePresent () {
-        return titleText.isPresent();
-    }
 
     public boolean isErrorPresent () {
         return errorLoginMessage.isPresent();
