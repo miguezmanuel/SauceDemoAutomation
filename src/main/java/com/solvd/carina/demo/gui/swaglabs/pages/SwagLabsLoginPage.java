@@ -1,38 +1,17 @@
 package com.solvd.carina.demo.gui.swaglabs.pages;
 
+import com.solvd.carina.demo.gui.swaglabs.common.SwagLabsBasePage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class SwagLabsLoginPage extends AbstractPage {
-
-    @FindBy(xpath = "//*[@class='login_logo']")
-    public ExtendedWebElement titleText;
-    @FindBy(xpath = "//*[@placeholder='Username']")
-    private ExtendedWebElement usernameInputField;
-    @FindBy(xpath = "//*[@placeholder='Password']")
-    private ExtendedWebElement passwordInputField;
-    @FindBy(xpath = "//*[@placeholder='error']")
-    private ExtendedWebElement errorLoginMessage;
+public class SwagLabsLoginPage extends SwagLabsBasePage {
 
     public SwagLabsLoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public boolean isTitlePresent () {
-        return titleText.isPresent();
-    }
 
-    public boolean isErrorPresent () {
-        return errorLoginMessage.isPresent();
-    }
 
-    public void typeUsernameInputField (String username) {
-        usernameInputField.type(username);
-    }
-
-    public void typePasswordInputField (String password) {
-        passwordInputField.type(password);
-    }
 }
