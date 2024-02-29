@@ -8,6 +8,7 @@ import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.webdriver.DriverHelper;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -58,7 +59,7 @@ public class WebSwagLabsTest implements IAbstractTest {
     }
 
     @Test
-    public void getImageUrlTest () {
+    public void getItemImageUrlTest () {
         SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
         SwagLabsLoginForm loginForm = loginPage.getLoginForm();
         SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
@@ -70,6 +71,21 @@ public class WebSwagLabsTest implements IAbstractTest {
 
         Assert.assertEquals(inventoryContainer
                 .getImageUrl("Sauce Labs Backpack"), driverHelper.getPageURL() + "static/media/sauce-backpack-1200x1500.0a0b85a3.jpg");
+    }
+
+    @Test
+    public void getItemDescriptionTest () {
+        SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm loginForm = loginPage.getLoginForm();
+        SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
+        SwagLabsInventoryContainer inventoryContainer = inventoryPage.getInventoryContainer();
+        DriverHelper driverHelper = new DriverHelper(getDriver());
+
+        loginPage.open();
+        loginForm.login();
+
+        Assert.assertEquals(inventoryContainer.getDescription("Sauce Labs Backpack"),
+                driverHelper.findExtendedWebElement(By.xpath("//div[contains(text(), 'Sly Pack')]")).getText());
     }
 
     @Test
