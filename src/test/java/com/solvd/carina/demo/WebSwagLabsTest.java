@@ -74,7 +74,7 @@ public class WebSwagLabsTest implements IAbstractTest {
     }
 
     @Test
-    public void getItemDescriptionTest () {
+    public void getItemDescriptionAndTitleTest () {
         SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
         SwagLabsLoginForm loginForm = loginPage.getLoginForm();
         SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
@@ -84,7 +84,12 @@ public class WebSwagLabsTest implements IAbstractTest {
         loginPage.open();
         loginForm.login();
 
-        Assert.assertEquals(inventoryContainer.getDescription("Sauce Labs Backpack"),
+        String elementName = "Sauce Labs Backpack";
+
+        Assert.assertEquals(inventoryContainer.getItemTitle(elementName),
+                driverHelper.findExtendedWebElement(By.xpath("//div[contains(text(), 'Sauce Labs Backpack')]")).getText());
+
+        Assert.assertEquals(inventoryContainer.getDescription(elementName),
                 driverHelper.findExtendedWebElement(By.xpath("//div[contains(text(), 'Sly Pack')]")).getText());
     }
 

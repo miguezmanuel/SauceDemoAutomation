@@ -7,6 +7,8 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class SwagLabsInventoryContainer extends AbstractUIObject {
 
     @FindBy(xpath = "//div[@class='inventory_item_name '][text()='%s']")
@@ -18,6 +20,11 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
     @FindBy(xpath = "//img[@alt='%s']")
     private ExtendedWebElement itemImage;
 
+    @FindBy(xpath = "//div[@class='inventory_item_name ']")
+    private List<ExtendedWebElement> itemsTitleList;
+    @FindBy(xpath = "//div[@class='inventory_item_price']")
+    private List<ExtendedWebElement> itemsPriceList;
+
     public SwagLabsInventoryContainer(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
@@ -25,6 +32,10 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
     public SwagLabsItemPage clickItemTitle (String elementName) {
         itemTitle.format(elementName).click();
         return new SwagLabsItemPage(getDriver());
+    }
+
+    public String getItemTitle (String elementName) {
+        return itemTitle.format(elementName).getText();
     }
 
     public String getItemPrice (String elementPrice) {
