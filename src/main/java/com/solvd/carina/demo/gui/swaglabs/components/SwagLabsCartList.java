@@ -6,6 +6,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SwagLabsCartList extends AbstractUIObject {
@@ -44,10 +45,10 @@ public class SwagLabsCartList extends AbstractUIObject {
     }
 
     public List<String> getTitlesList () {
-        List<String> list = null;
+        List<String> list = new ArrayList<>();
 
         for (int i = 0; i < itemTitlesList.size(); i++) {
-            String element = itemTitlesList.get(i).toString();
+            String element = itemTitlesList.get(i).getText();
             list.add(element);
         }
 

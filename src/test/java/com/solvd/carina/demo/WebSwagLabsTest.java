@@ -1,9 +1,7 @@
 package com.solvd.carina.demo;
 
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsHeader;
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsInventoryContainer;
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsLoginForm;
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsSideMenu;
+import com.solvd.carina.demo.gui.swaglabs.components.*;
+import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsCartPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
@@ -11,6 +9,8 @@ import com.zebrunner.carina.webdriver.DriverHelper;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class WebSwagLabsTest implements IAbstractTest {
 
@@ -108,6 +108,28 @@ public class WebSwagLabsTest implements IAbstractTest {
         header.clickSideMenuButton();
         sideMenu.clickAboutButton();
         Assert.assertFalse(header.isTitlePresent(), "title present, about button or side menu might have failed");
+
+    }
+
+    @Test
+    public void AddAndCheckItemTitlesList () {
+        SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm loginForm = loginPage.getLoginForm();
+        SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
+        SwagLabsHeader header = inventoryPage.getHeader();
+        SwagLabsInventoryContainer inventoryContainer = inventoryPage.getInventoryContainer();
+        SwagLabsCartPage cartPage = new SwagLabsCartPage(getDriver());
+        SwagLabsCartList cartList = cartPage.getCartList();
+
+        loginPage.open();
+        loginForm.login();
+        String elementName = "Sauce Labs Backpack";
+        inventoryContainer.clickAddToCartButton(elementName);
+
+        header.clickCartButton();
+        List<String> list = cartList.getTitlesList();
+
+        Assert.assertEquals(list.get(0), elementName);
 
     }
 
