@@ -19,7 +19,8 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
     private ExtendedWebElement itemDescription;
     @FindBy(xpath = "//img[@alt='%s']")
     private ExtendedWebElement itemImage;
-
+    @FindBy(xpath = "//div[text()='Sauce Labs Backpack']/ancestor::div[@class='inventory_item']//button")
+    private ExtendedWebElement addToCartButton;
     @FindBy(xpath = "//div[@class='inventory_item_name ']")
     private List<ExtendedWebElement> itemsTitleList;
     @FindBy(xpath = "//div[@class='inventory_item_price']")
@@ -27,6 +28,10 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
 
     public SwagLabsInventoryContainer(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
+    }
+
+    public void clickAddToCartButton () {
+        addToCartButton.click();
     }
 
     public SwagLabsItemPage clickItemTitle (String elementName) {

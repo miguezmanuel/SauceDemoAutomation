@@ -17,6 +17,8 @@ public class SwagLabsBasePage extends AbstractPage {
     private SwagLabsSideMenu sideMenu;
     @FindBy(xpath = "//div[@class='bm-menu']")
     private SwagLabsInventoryContainer inventoryContainer;
+    @FindBy(xpath = "//footer[@class='footer']")
+    private SwagLabsFooter footer;
 
     public SwagLabsBasePage(WebDriver driver) {
         super(driver);
@@ -40,5 +42,9 @@ public class SwagLabsBasePage extends AbstractPage {
 
     public SwagLabsInventoryContainer getInventoryContainer() {
         return inventoryContainer;
+    }
+
+    public SwagLabsFooter getFooter() {
+        return footer;
     }
 }

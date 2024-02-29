@@ -33,4 +33,9 @@ public class SwagLabsInventoryPage extends SwagLabsBasePage {
     public SwagLabsInventoryContainer getInventoryContainer() {
         return super.getInventoryContainer();
     }
+
+    @Override
+    public SwagLabsFooter getFooter() {
+        return super.getFooter();
+    }
 }
