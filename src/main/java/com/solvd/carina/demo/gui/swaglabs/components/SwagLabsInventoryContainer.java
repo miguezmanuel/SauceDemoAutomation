@@ -11,11 +11,11 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
 
     @FindBy(xpath = "//div[@class='inventory_item_name '][text()='%s']")
     private ExtendedWebElement itemTitle;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[@class='inventory_item_price'][text()='%s']")
     private ExtendedWebElement itemPrice;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[text()='%s']/following::div[@class='inventory_item_desc'][1]")
     private ExtendedWebElement itemDescription;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//img[@alt='%s']")
     private ExtendedWebElement itemImage;
 
     public SwagLabsInventoryContainer(WebDriver driver, SearchContext searchContext) {
@@ -26,4 +26,20 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
         itemTitle.format(elementName).click();
         return new SwagLabsItemPage(getDriver());
     }
+
+    public String getItemPrice (String elementPrice) {
+        return "$" + itemPrice.format(elementPrice).getText();
+    }
+
+    public String getDescription (String elementName) {
+        return itemDescription.format(elementName).getText();
+    }
+
+    public String getImageUrl (String elementName) {
+        return itemImage.format(elementName).getAttribute("src");
+    }
+
+
+
+
 }

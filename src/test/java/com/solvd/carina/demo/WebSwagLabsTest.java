@@ -7,6 +7,7 @@ import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsSideMenu;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
+import com.zebrunner.carina.webdriver.DriverHelper;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -54,6 +55,21 @@ public class WebSwagLabsTest implements IAbstractTest {
         loginForm.login();
 
         inventoryContainer.clickItemTitle("Sauce Labs Backpack");
+    }
+
+    @Test
+    public void getImageUrlTest () {
+        SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm loginForm = loginPage.getLoginForm();
+        SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
+        SwagLabsInventoryContainer inventoryContainer = inventoryPage.getInventoryContainer();
+        DriverHelper driverHelper = new DriverHelper(getDriver());
+
+        loginPage.open();
+        loginForm.login();
+
+        Assert.assertEquals(inventoryContainer
+                .getImageUrl("Sauce Labs Backpack"), driverHelper.getPageURL() + "static/media/sauce-backpack-1200x1500.0a0b85a3.jpg");
     }
 
     @Test
