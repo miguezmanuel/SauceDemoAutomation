@@ -25,7 +25,7 @@ public class SwagLabsLoginForm extends AbstractUIObject {
         return errorLoginMessage.isPresent();
     }
 
-    public String returnErrorMessage () {
+    public String errorMessageText() {
         return errorLoginMessage.getText();
     }
 

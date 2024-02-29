@@ -11,7 +11,7 @@ public class WebSwagLabsTest implements IAbstractTest {
     @Test
     public void loginTest () {
         SwagLabsLoginPage swagLabsLoginPage = new SwagLabsLoginPage(getDriver());
-        SwagLabsLoginForm swagLabsLoginForm = swagLabsLoginPage.getSwagLabsLoginForm();
+        SwagLabsLoginForm swagLabsLoginForm = swagLabsLoginPage.getLoginForm();
 
         swagLabsLoginPage.open();
         Assert.assertTrue(swagLabsLoginPage.isTitlePresent());
@@ -26,7 +26,7 @@ public class WebSwagLabsTest implements IAbstractTest {
     @Test
     public void checkLoginErrorMessageTest () {
         SwagLabsLoginPage swagLabsLoginPage = new SwagLabsLoginPage(getDriver());
-        SwagLabsLoginForm swagLabsLoginForm = swagLabsLoginPage.getSwagLabsLoginForm();
+        SwagLabsLoginForm swagLabsLoginForm = swagLabsLoginPage.getLoginForm();
 
         swagLabsLoginPage.open();
 
@@ -35,7 +35,13 @@ public class WebSwagLabsTest implements IAbstractTest {
         swagLabsLoginForm.clickLoginButton();
 
         Assert.assertTrue(swagLabsLoginForm.isErrorPresent(), "Error is not shown");
-        Assert.assertEquals(swagLabsLoginForm.returnErrorMessage(), "Epic sadface: Username and password do not match any user in this service");
+        Assert.assertEquals(swagLabsLoginForm.errorMessageText(), "Epic sadface: Username and password do not match any user in this service");
 
     }
+
+    @Test
+    public void goToAboutPageTest () {
+
+    }
+
 }
