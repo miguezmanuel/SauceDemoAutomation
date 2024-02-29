@@ -1,5 +1,8 @@
 package com.solvd.carina.demo.gui.swaglabs.components;
 
+import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsHomePage;
+import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
+import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -23,16 +26,19 @@ public class SwagLabsSideMenu extends AbstractUIObject {
         super(driver, searchContext);
     }
 
-    public void clickAllItemsButton () {
+    public SwagLabsInventoryPage clickAllItemsButton () {
         allItemsButton.click();
+        return new SwagLabsInventoryPage(getDriver());
     }
 
-    public void clickAboutButton () {
+    public SwagLabsHomePage clickAboutButton () {
         aboutButton.click();
+        return new SwagLabsHomePage(getDriver());
     }
 
-    public void clickLogoutButton () {
+    public SwagLabsLoginPage clickLogoutButton () {
         logoutButton.click();
+        return new SwagLabsLoginPage(getDriver());
     }
 
     public void clickResetAppStateButton () {

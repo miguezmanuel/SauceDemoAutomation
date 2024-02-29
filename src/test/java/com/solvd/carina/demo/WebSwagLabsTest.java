@@ -1,6 +1,10 @@
 package com.solvd.carina.demo;
 
+import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsHeader;
+import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsInventoryContainer;
 import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsLoginForm;
+import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsSideMenu;
+import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.Assert;
@@ -40,7 +44,33 @@ public class WebSwagLabsTest implements IAbstractTest {
     }
 
     @Test
+    public void goToItemPage () {
+        SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm loginForm = loginPage.getLoginForm();
+        SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
+        SwagLabsInventoryContainer inventoryContainer = inventoryPage.getInventoryContainer();
+
+        loginPage.open();
+        loginForm.login();
+
+        inventoryContainer.clickItemTitle("Sauce Labs Backpack");
+    }
+
+    @Test
     public void goToAboutPageTest () {
+        SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm loginForm = loginPage.getLoginForm();
+        SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
+        SwagLabsHeader header = inventoryPage.getHeader();
+        SwagLabsSideMenu sideMenu = inventoryPage.getSideMenu();
+
+        loginPage.open();
+        loginForm.login();
+        Assert.assertTrue(header.isTitlePresent(), "title not present, login might have failed");
+
+        header.clickSideMenuButton();
+        sideMenu.clickAboutButton();
+        Assert.assertFalse(header.isTitlePresent(), "title present, about button or side menu might have failed");
 
     }
 

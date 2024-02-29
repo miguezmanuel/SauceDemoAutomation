@@ -1,9 +1,6 @@
 package com.solvd.carina.demo.gui.swaglabs.common;
 
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsHeader;
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsLoginForm;
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsSecondHeader;
-import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsSideMenu;
+import com.solvd.carina.demo.gui.swaglabs.components.*;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -18,6 +15,8 @@ public class SwagLabsBasePage extends AbstractPage {
     private SwagLabsSecondHeader SecondHeader;
     @FindBy(xpath = "//div[@class='bm-menu']")
     private SwagLabsSideMenu sideMenu;
+    @FindBy(xpath = "//div[@class='bm-menu']")
+    private SwagLabsInventoryContainer inventoryContainer;
 
     public SwagLabsBasePage(WebDriver driver) {
         super(driver);
@@ -37,5 +36,9 @@ public class SwagLabsBasePage extends AbstractPage {
 
     public SwagLabsSideMenu getSideMenu() {
         return sideMenu;
+    }
+
+    public SwagLabsInventoryContainer getInventoryContainer() {
+        return inventoryContainer;
     }
 }

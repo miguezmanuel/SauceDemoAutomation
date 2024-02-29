@@ -48,6 +48,7 @@ public class SwagLabsLoginForm extends AbstractUIObject {
     public void login () {
         usernameInputField.type("standard_user");
         passwordInputField.type("secret_sauce");
+        loginButton.click();
     }
 
 }
