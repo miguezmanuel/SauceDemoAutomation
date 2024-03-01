@@ -7,12 +7,10 @@ import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.webdriver.DriverHelper;
-import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class WebSwagLabsTest implements IAbstractTest {
@@ -148,48 +146,16 @@ public class WebSwagLabsTest implements IAbstractTest {
         loginForm.login();
 
 //      testing low to high filter
-        secondHeader.clickFilterButton();
-        secondHeader.selectPriceLowToHighOption();
-        List<Double> priceListLowToHigh = inventoryContainer.getItemsPriceList();
-
-        for (int i = 0; i < priceListLowToHigh.size()-1; i++) {
-            boolean elementIsLessThanFollowing = priceListLowToHigh.get(i) <= priceListLowToHigh.get(i + 1);
-            Assert.assertTrue(elementIsLessThanFollowing, "List order is not correct on lower to higher");
-        }
+//        checkFilteredList(secondHeader, inventoryContainer, FilterType.PRICE_LOW_TO_HIGH);
 
 //      testing high to low filter
-        secondHeader.clickFilterButton();
-        secondHeader.selectPriceHighToLowOption();
-        List<Double> priceListHighToLow = inventoryContainer.getItemsPriceList();
-
-        for (int i = 0; i < priceListHighToLow.size()-1; i++) {
-            boolean elementIsHigherThanFollowing = priceListHighToLow.get(i) >= priceListHighToLow.get(i + 1);
-            Assert.assertTrue(elementIsHigherThanFollowing, "List order is not correct on higher to lower");
-        }
+//        checkFilteredList(secondHeader, inventoryContainer, FilterType.PRICE_HIGH_TO_LOW);
 
 //      testing a to z filter
-        secondHeader.clickFilterButton();
-        secondHeader.selectNameAtoZOption();
-        List<String> titleListAtoZ = inventoryContainer.getItemsTitleList();
-
-        for (int i = 0; i < titleListAtoZ.size()-1; i++) {
-            String previousElement = titleListAtoZ.get(i);
-            String followingElement = titleListAtoZ.get(i + 1);
-            int elementIsAlphabeticallyLess = previousElement.compareTo(followingElement);
-            Assert.assertTrue(elementIsAlphabeticallyLess <= 0, "List order is not correct on A to Z order");
-        }
+//        checkFilteredList(secondHeader, inventoryContainer, FilterType.NAME_A_TO_Z);
 
 //      testing z to a filter
-        secondHeader.clickFilterButton();
-        secondHeader.selectNameZtoAOption();
-        List<String> titleListZtoA = inventoryContainer.getItemsTitleList();
-
-        for (int i = 0; i < titleListZtoA.size()-1; i++) {
-            String previousElement = titleListZtoA.get(i);
-            String followingElement = titleListZtoA.get(i + 1);
-            int elementIsAlphabeticallyLess = previousElement.compareTo(followingElement);
-            Assert.assertTrue(elementIsAlphabeticallyLess > 0, "List order is not correct on A to Z order");
-        }
+        checkFilteredList(secondHeader, inventoryContainer, FilterType.NAME_Z_TO_A);
     }
 
     private void checkFilteredList (SwagLabsSecondHeader secondHeader, SwagLabsInventoryContainer inventoryContainer, FilterType filterType) {
@@ -199,24 +165,42 @@ public class WebSwagLabsTest implements IAbstractTest {
         switch (filterType) {
             case PRICE_LOW_TO_HIGH:
                 pricesList = inventoryContainer.getItemsPriceList();
-                verifyPricesOrder(filterType, secondHeader, pricesList, true, "List: " + filterType.name() + "is not in right order");
+                verifyPriceOrder(filterType, secondHeader, pricesList, true, "List: " + filterType.name() + " is not in right order");
                 break;
             case PRICE_HIGH_TO_LOW:
                 pricesList = inventoryContainer.getItemsPriceList();
-                verifyPricesOrder(filterType, secondHeader, pricesList, false, "List: " + filterType.name() + "is not in right order");
+                verifyPriceOrder(filterType, secondHeader, pricesList, false, "List: " + filterType.name() + " is not in right order");
+                break;
+            case NAME_A_TO_Z:
+                titlesList = inventoryContainer.getItemsTitleList();
+                verifyNameOrder(filterType, secondHeader, titlesList, true, "List: " + filterType.name() + " is not in right order");
+                break;
+            case NAME_Z_TO_A:
+                titlesList = inventoryContainer.getItemsTitleList();
+                verifyNameOrder(filterType, secondHeader, titlesList, false, "List: " + filterType.name() + " is not in right order");
+                break;
 
-
-
-
+            default: throw new RuntimeException("filter type does not exist");
         }
     }
 
-    private void verifyPricesOrder (FilterType filterType, SwagLabsSecondHeader secondHeader, List<Double> list, boolean ascendingOrder, String errorMessage) {
+    private void verifyPriceOrder(FilterType filterType, SwagLabsSecondHeader secondHeader, List<Double> list, boolean ascendingOrder, String errorMessage) {
         secondHeader.selectFilterOption(filterType);
         for (int i = 0; i < list.size() - 1; i++) {
             boolean elementIsLessThanFollowing = list.get(i) <= list.get(i + 1);
             if (ascendingOrder) Assert.assertTrue(elementIsLessThanFollowing, errorMessage);
             else Assert.assertFalse(elementIsLessThanFollowing, errorMessage);
+        }
+    }
+
+    private void verifyNameOrder(FilterType filterType, SwagLabsSecondHeader secondHeader, List<String> list, boolean ascendingOrder, String errorMessage) {
+        secondHeader.selectFilterOption(filterType);
+        for (int i = 0; i < list.size() - 1; i++) {
+            String previousElement = list.get(i);
+            String followingElement = list.get(i + 1);
+            boolean previousIsLessOrEqualThanFollowing = previousElement.compareTo(followingElement) < 0;
+            if (ascendingOrder) Assert.assertTrue(previousIsLessOrEqualThanFollowing, errorMessage);
+            else Assert.assertFalse(previousIsLessOrEqualThanFollowing, errorMessage);
         }
     }
 
