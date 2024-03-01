@@ -145,43 +145,49 @@ public class WebSwagLabsTest implements IAbstractTest {
         loginPage.open();
         loginForm.login();
 
-        List<Double> priceList = inventoryContainer.getItemsPriceList();
-        List<String> titleList = inventoryContainer.getItemsTitleList();
-
 //      testing low to high filter
         secondHeader.clickFilterButton();
         secondHeader.selectPriceLowToHighOption();
+        List<Double> priceListLowToHigh = inventoryContainer.getItemsPriceList();
 
-        for (int i = 0; i < priceList.size()-1; i++) {
-            boolean elementIsLessThanFollowing = priceList.get(i) <= priceList.get(i + 1);
+        for (int i = 0; i < priceListLowToHigh.size()-1; i++) {
+            boolean elementIsLessThanFollowing = priceListLowToHigh.get(i) <= priceListLowToHigh.get(i + 1);
             Assert.assertTrue(elementIsLessThanFollowing, "List order is not correct on lower to higher");
         }
 
 //      testing high to low filter
         secondHeader.clickFilterButton();
         secondHeader.selectPriceHighToLowOption();
+        List<Double> priceListHighToLow = inventoryContainer.getItemsPriceList();
 
-        for (int i = 0; i < priceList.size()-1; i++) {
-            boolean elementIsHigherThanFollowing = priceList.get(i) >= priceList.get(i + 1);
+        for (int i = 0; i < priceListHighToLow.size()-1; i++) {
+            boolean elementIsHigherThanFollowing = priceListHighToLow.get(i) >= priceListHighToLow.get(i + 1);
             Assert.assertTrue(elementIsHigherThanFollowing, "List order is not correct on higher to lower");
         }
-
 
 //      testing a to z filter
         secondHeader.clickFilterButton();
         secondHeader.selectNameAtoZOption();
+        List<String> titleListAtoZ = inventoryContainer.getItemsTitleList();
 
-        for (int i = 0; i < titleList.size()-1; i++) {
-            String previousElement = titleList.get(i);
-            String followingElement = titleList.get(i + 1);
+        for (int i = 0; i < titleListAtoZ.size()-1; i++) {
+            String previousElement = titleListAtoZ.get(i);
+            String followingElement = titleListAtoZ.get(i + 1);
             int elementIsAlphabeticallyLess = previousElement.compareTo(followingElement);
-            Assert.assertTrue(elementIsAlphabeticallyLess < 0, "List order is not correct on A to Z order");
+            Assert.assertTrue(elementIsAlphabeticallyLess <= 0, "List order is not correct on A to Z order");
         }
 
 //      testing z to a filter
+        secondHeader.clickFilterButton();
+        secondHeader.selectNameAtoZOption();
+        List<String> titleListZtoA = inventoryContainer.getItemsTitleList();
 
+        for (int i = 0; i < titleListZtoA.size()-1; i++) {
+            String previousElement = titleListZtoA.get(i);
+            String followingElement = titleListZtoA.get(i + 1);
+            int elementIsAlphabeticallyLess = followingElement.compareTo(previousElement);
+            Assert.assertTrue(elementIsAlphabeticallyLess > 0, "List order is not correct on A to Z order");
+        }
     }
-
-
 
 }
