@@ -7,6 +7,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SwagLabsInventoryContainer extends AbstractUIObject {
@@ -30,6 +31,29 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
 
     public SwagLabsInventoryContainer(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
+    }
+
+    public List<String> getItemsTitleList () {
+        List<String> list = new ArrayList<>();
+
+        for (int i = 0; i < itemsTitleList.size(); i++) {
+            list.add(itemsTitleList.get(i).getText());
+        }
+
+        return list;
+    }
+
+    public List<Double> getItemsPriceList () {
+        List<Double> list = new ArrayList<>();
+
+        for (int i = 0; i < itemsPriceList.size(); i++) {
+            String priceWithDolar = itemsPriceList.get(i).getText();
+            String priceWithoutDolar = priceWithDolar.replaceAll("[^\\d.]", "");
+            double price = Double.parseDouble(priceWithoutDolar);
+            list.add(price);
+        }
+
+        return list;
     }
 
     public void clickAddToCartButton (String elementName) {

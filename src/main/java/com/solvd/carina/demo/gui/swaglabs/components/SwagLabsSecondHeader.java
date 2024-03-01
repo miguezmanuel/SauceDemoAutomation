@@ -10,7 +10,7 @@ public class SwagLabsSecondHeader extends AbstractUIObject {
 
     @FindBy(xpath = "//span[@class='title']")
     private ExtendedWebElement productsTitleText;
-    @FindBy(xpath = "//span[@class='active_option']")
+    @FindBy(xpath = "//*[@class='product_sort_container']")
     private ExtendedWebElement filterButton;
     @FindBy(xpath = "//option[@value='az']")
     private ExtendedWebElement nameAtoZ;
