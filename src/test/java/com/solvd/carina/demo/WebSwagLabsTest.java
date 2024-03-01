@@ -1,5 +1,6 @@
 package com.solvd.carina.demo;
 
+import com.solvd.carina.demo.gui.swaglabs.common.FilterType;
 import com.solvd.carina.demo.gui.swaglabs.components.*;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsCartPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
@@ -133,7 +134,6 @@ public class WebSwagLabsTest implements IAbstractTest {
 
     }
 
-
     @Test
     public void checkFilterFunction () {
         SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
@@ -179,14 +179,23 @@ public class WebSwagLabsTest implements IAbstractTest {
 
 //      testing z to a filter
         secondHeader.clickFilterButton();
-        secondHeader.selectNameAtoZOption();
+        secondHeader.selectNameZtoAOption();
         List<String> titleListZtoA = inventoryContainer.getItemsTitleList();
 
         for (int i = 0; i < titleListZtoA.size()-1; i++) {
             String previousElement = titleListZtoA.get(i);
             String followingElement = titleListZtoA.get(i + 1);
-            int elementIsAlphabeticallyLess = followingElement.compareTo(previousElement);
+            int elementIsAlphabeticallyLess = previousElement.compareTo(followingElement);
             Assert.assertTrue(elementIsAlphabeticallyLess > 0, "List order is not correct on A to Z order");
+        }
+    }
+
+    public void checkFilteredList (SwagLabsSecondHeader secondHeader, SwagLabsInventoryContainer inventoryContainer, FilterType filterType) {
+        switch (filterType) {
+            case PRICE_LOW_TO_HIGH:
+                secondHeader.selectPriceLowToHighOption();
+
+
         }
     }
 
