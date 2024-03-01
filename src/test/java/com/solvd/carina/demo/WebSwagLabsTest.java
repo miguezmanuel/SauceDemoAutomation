@@ -7,10 +7,12 @@ import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.webdriver.DriverHelper;
+import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WebSwagLabsTest implements IAbstractTest {
@@ -190,12 +192,31 @@ public class WebSwagLabsTest implements IAbstractTest {
         }
     }
 
-    public void checkFilteredList (SwagLabsSecondHeader secondHeader, SwagLabsInventoryContainer inventoryContainer, FilterType filterType) {
+    private void checkFilteredList (SwagLabsSecondHeader secondHeader, SwagLabsInventoryContainer inventoryContainer, FilterType filterType) {
+        List<String> titlesList;
+        List<Double> pricesList;
+
         switch (filterType) {
             case PRICE_LOW_TO_HIGH:
-                secondHeader.selectPriceLowToHighOption();
+                pricesList = inventoryContainer.getItemsPriceList();
+                verifyPricesOrder(filterType, secondHeader, pricesList, true, "List: " + filterType.name() + "is not in right order");
+                break;
+            case PRICE_HIGH_TO_LOW:
+                pricesList = inventoryContainer.getItemsPriceList();
+                verifyPricesOrder(filterType, secondHeader, pricesList, false, "List: " + filterType.name() + "is not in right order");
 
 
+
+
+        }
+    }
+
+    private void verifyPricesOrder (FilterType filterType, SwagLabsSecondHeader secondHeader, List<Double> list, boolean ascendingOrder, String errorMessage) {
+        secondHeader.selectFilterOption(filterType);
+        for (int i = 0; i < list.size() - 1; i++) {
+            boolean elementIsLessThanFollowing = list.get(i) <= list.get(i + 1);
+            if (ascendingOrder) Assert.assertTrue(elementIsLessThanFollowing, errorMessage);
+            else Assert.assertFalse(elementIsLessThanFollowing, errorMessage);
         }
     }
 

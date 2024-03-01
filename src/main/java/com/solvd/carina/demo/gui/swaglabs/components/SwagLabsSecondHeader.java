@@ -39,21 +39,19 @@ public class SwagLabsSecondHeader extends AbstractUIObject {
     }
 
     public void selectFilterOption (FilterType filterType) {
+        filterButton.click();
+
         switch (filterType) {
             case PRICE_LOW_TO_HIGH:
-                filterButton.click();
                 priceLowToHigh.click();
                 break;
             case PRICE_HIGH_TO_LOW:
-                filterButton.click();
                 priceHighToLow.click();
                 break;
             case NAME_A_TO_Z:
-                filterButton.click();
                 nameAtoZ.click();
                 break;
             case NAME_Z_TO_A:
-                filterButton.click();
                 nameZtoA.click();
                 break;
 
