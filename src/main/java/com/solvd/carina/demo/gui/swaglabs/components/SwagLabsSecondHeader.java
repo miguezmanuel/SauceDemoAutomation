@@ -1,5 +1,6 @@
 package com.solvd.carina.demo.gui.swaglabs.components;
 
+import com.solvd.carina.demo.gui.swaglabs.common.FilterType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -37,20 +38,27 @@ public class SwagLabsSecondHeader extends AbstractUIObject {
         filterButton.click();
     }
 
-    public void selectNameAtoZOption () {
-        nameAtoZ.click();
-    }
+    public void selectFilterOption (FilterType filterType) {
+        switch (filterType) {
+            case PRICE_LOW_TO_HIGH:
+                filterButton.click();
+                priceLowToHigh.click();
+                break;
+            case PRICE_HIGH_TO_LOW:
+                filterButton.click();
+                priceHighToLow.click();
+                break;
+            case NAME_A_TO_Z:
+                filterButton.click();
+                nameAtoZ.click();
+                break;
+            case NAME_Z_TO_A:
+                filterButton.click();
+                nameZtoA.click();
+                break;
 
-    public void selectNameZtoAOption () {
-        nameZtoA.click();
-    }
-
-    public void selectPriceLowToHighOption () {
-        priceLowToHigh.click();
-    }
-
-    public void selectPriceHighToLowOption () {
-        priceHighToLow.click();
+            default: throw new RuntimeException("filter type does not exist");
+        }
     }
 
 }
