@@ -1,0 +1,30 @@
+[2024-03-02 02:19:45] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-02 02:19:45] [1] [INFO] TEST [WebTestAutomation - checkFilterFunction] STARTED at [23:19:45 2024-03-01]
+[2024-03-02 02:19:45] [1] [INFO] Starting driver session...
+[2024-03-02 02:19:45] [1] [INFO] Set Chrome language to: en
+[2024-03-02 02:19:48] [1] [INFO] Driver session started.
+[2024-03-02 02:19:48] [1] [INFO] INFO: opening url 'https://www.saucedemo.com/'
+[2024-03-02 02:19:49] [1] [INFO] PASS: keys 'standard_user' are sent to element 'usernameInputField'.
+[2024-03-02 02:19:49] [1] [INFO] PASS: keys 'secret_sauce' are sent to element 'passwordInputField'.
+[2024-03-02 02:19:50] [1] [INFO] PASS: element 'loginButton' is clicked.
+[2024-03-02 02:19:51] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:19:51] [1] [INFO] PASS: element 'priceLowToHigh' is clicked.
+[2024-03-02 02:19:53] [1] [INFO] [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]
+[2024-03-02 02:19:53] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:19:53] [1] [INFO] PASS: element 'priceLowToHigh' is clicked.
+[2024-03-02 02:19:54] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:19:54] [1] [INFO] PASS: element 'priceHighToLow' is clicked.
+[2024-03-02 02:19:56] [1] [INFO] [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]
+[2024-03-02 02:19:56] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:19:56] [1] [INFO] PASS: element 'priceHighToLow' is clicked.
+[2024-03-02 02:19:57] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:19:57] [1] [INFO] PASS: element 'nameAtoZ' is clicked.
+[2024-03-02 02:19:59] [1] [INFO] [Sauce Labs Backpack, Sauce Labs Bike Light, Sauce Labs Bolt T-Shirt, Sauce Labs Fleece Jacket, Sauce Labs Onesie, Test.allTheThings() T-Shirt (Red)]
+[2024-03-02 02:19:59] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:20:00] [1] [INFO] PASS: element 'nameAtoZ' is clicked.
+[2024-03-02 02:20:00] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:20:01] [1] [INFO] PASS: element 'nameZtoA' is clicked.
+[2024-03-02 02:20:02] [1] [INFO] [Test.allTheThings() T-Shirt (Red), Sauce Labs Onesie, Sauce Labs Fleece Jacket, Sauce Labs Bolt T-Shirt, Sauce Labs Bike Light, Sauce Labs Backpack]
+[2024-03-02 02:20:02] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 02:20:02] [1] [INFO] PASS: element 'nameZtoA' is clicked.
+[2024-03-02 02:20:03] [1] [INFO] TEST [WebTestAutomation - checkFilterFunction] PASSED at [23:20:03 2024-03-01]

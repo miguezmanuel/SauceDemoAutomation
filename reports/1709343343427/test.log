@@ -1,0 +1,25 @@
+[2024-03-02 01:35:43] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.saucedemo.com/
+browser_language=en
+selenium_url=http://localhost:4444/wd/hub
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+browserName=chrome
+===============================================
+
+[2024-03-02 01:35:43] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-02 01:35:48] [1] [INFO] [TestNG] Running:
+  C:\Users\manue\AppData\Local\JetBrains\IdeaIC2023.1\temp-testng-customsuite.xml
+
+[2024-03-02 01:35:48] [1] [INFO] Set thread-count=1
+[2024-03-02 01:35:48] [1] [INFO] Set data-provider-thread-count=1
+[2024-03-02 01:35:48] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-03-02 01:39:26] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-03-02 01:39:26] [1] [INFO] RESULT #1: TEST [WebTestAutomation - checkFilterFunction] FAIL [screenshots=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1709343343427/af90b96f-3ea8-4bef-8eca-4fa2e3e18027/report.html | log=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1709343343427/af90b96f-3ea8-4bef-8eca-4fa2e3e18027/test.log]

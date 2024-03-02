@@ -1,0 +1,26 @@
+[2024-03-02 01:43:52] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-02 01:43:52] [1] [INFO] TEST [WebTestAutomation - checkFilterFunction] STARTED at [22:43:52 2024-03-01]
+[2024-03-02 01:43:52] [1] [INFO] Starting driver session...
+[2024-03-02 01:43:52] [1] [INFO] Set Chrome language to: en
+[2024-03-02 01:43:55] [1] [INFO] Driver session started.
+[2024-03-02 01:43:55] [1] [INFO] INFO: opening url 'https://www.saucedemo.com/'
+[2024-03-02 01:43:55] [1] [INFO] PASS: keys 'standard_user' are sent to element 'usernameInputField'.
+[2024-03-02 01:43:56] [1] [INFO] PASS: keys 'secret_sauce' are sent to element 'passwordInputField'.
+[2024-03-02 01:43:57] [1] [INFO] PASS: element 'loginButton' is clicked.
+[2024-03-02 01:43:57] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:43:58] [1] [INFO] PASS: element 'priceLowToHigh' is clicked.
+[2024-03-02 01:43:59] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:00] [1] [INFO] PASS: element 'priceLowToHigh' is clicked.
+[2024-03-02 01:44:00] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:01] [1] [INFO] PASS: element 'priceHighToLow' is clicked.
+[2024-03-02 01:44:03] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:03] [1] [INFO] PASS: element 'priceHighToLow' is clicked.
+[2024-03-02 01:44:04] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:04] [1] [INFO] PASS: element 'nameAtoZ' is clicked.
+[2024-03-02 01:44:06] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:06] [1] [INFO] PASS: element 'nameAtoZ' is clicked.
+[2024-03-02 01:44:07] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:07] [1] [INFO] PASS: element 'nameZtoA' is clicked.
+[2024-03-02 01:44:09] [1] [INFO] PASS: element 'filterButton' is clicked.
+[2024-03-02 01:44:09] [1] [INFO] PASS: element 'nameZtoA' is clicked.
+[2024-03-02 01:44:10] [1] [INFO] TEST [WebTestAutomation - checkFilterFunction] PASSED at [22:44:10 2024-03-01]
