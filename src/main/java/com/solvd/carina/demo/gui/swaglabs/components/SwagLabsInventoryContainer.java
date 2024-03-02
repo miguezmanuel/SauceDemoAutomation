@@ -52,7 +52,6 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
             double price = Double.parseDouble(priceWithoutDolar);
             list.add(price);
         }
-
         return list;
     }
 

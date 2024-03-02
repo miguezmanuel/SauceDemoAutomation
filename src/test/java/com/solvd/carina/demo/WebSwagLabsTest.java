@@ -146,13 +146,13 @@ public class WebSwagLabsTest implements IAbstractTest {
         loginForm.login();
 
 //      testing low to high filter
-//        checkFilteredList(secondHeader, inventoryContainer, FilterType.PRICE_LOW_TO_HIGH);
+        checkFilteredList(secondHeader, inventoryContainer, FilterType.PRICE_LOW_TO_HIGH);
 
 //      testing high to low filter
-//        checkFilteredList(secondHeader, inventoryContainer, FilterType.PRICE_HIGH_TO_LOW);
+        checkFilteredList(secondHeader, inventoryContainer, FilterType.PRICE_HIGH_TO_LOW);
 
 //      testing a to z filter
-//        checkFilteredList(secondHeader, inventoryContainer, FilterType.NAME_A_TO_Z);
+        checkFilteredList(secondHeader, inventoryContainer, FilterType.NAME_A_TO_Z);
 
 //      testing z to a filter
         checkFilteredList(secondHeader, inventoryContainer, FilterType.NAME_Z_TO_A);
@@ -162,7 +162,9 @@ public class WebSwagLabsTest implements IAbstractTest {
         List<String> titlesList;
         List<Double> pricesList;
 
+        secondHeader.selectFilterOption(filterType);
         switch (filterType) {
+
             case PRICE_LOW_TO_HIGH:
                 pricesList = inventoryContainer.getItemsPriceList();
                 verifyPriceOrder(filterType, secondHeader, pricesList, true, "List: " + filterType.name() + " is not in right order");
@@ -187,20 +189,17 @@ public class WebSwagLabsTest implements IAbstractTest {
     private void verifyPriceOrder(FilterType filterType, SwagLabsSecondHeader secondHeader, List<Double> list, boolean ascendingOrder, String errorMessage) {
         secondHeader.selectFilterOption(filterType);
         for (int i = 0; i < list.size() - 1; i++) {
-            boolean elementIsLessThanFollowing = list.get(i) <= list.get(i + 1);
-            if (ascendingOrder) Assert.assertTrue(elementIsLessThanFollowing, errorMessage);
-            else Assert.assertFalse(elementIsLessThanFollowing, errorMessage);
+            if (ascendingOrder) Assert.assertTrue(list.get(i) <= list.get(i + 1), errorMessage);
+             else Assert.assertTrue(list.get(i) >= list.get(i + 1), errorMessage);
         }
     }
 
     private void verifyNameOrder(FilterType filterType, SwagLabsSecondHeader secondHeader, List<String> list, boolean ascendingOrder, String errorMessage) {
         secondHeader.selectFilterOption(filterType);
         for (int i = 0; i < list.size() - 1; i++) {
-            String previousElement = list.get(i);
-            String followingElement = list.get(i + 1);
-            boolean previousIsLessOrEqualThanFollowing = previousElement.compareTo(followingElement) < 0;
-            if (ascendingOrder) Assert.assertTrue(previousIsLessOrEqualThanFollowing, errorMessage);
-            else Assert.assertFalse(previousIsLessOrEqualThanFollowing, errorMessage);
+            if (ascendingOrder) Assert.assertTrue(list.get(i).compareTo(list.get(i + 1)) <= 0, errorMessage);
+            else Assert.assertTrue(list.get(i).compareTo(list.get(i + 1)) >= 0, errorMessage);
+
         }
     }
 
