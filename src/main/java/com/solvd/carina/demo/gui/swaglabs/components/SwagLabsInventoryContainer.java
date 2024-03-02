@@ -3,6 +3,9 @@ package com.solvd.carina.demo.gui.swaglabs.components;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsItemPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -11,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SwagLabsInventoryContainer extends AbstractUIObject {
+
+    Logger logger = (Logger) LogManager.getLogger(SwagLabsInventoryContainer.class);
 
     @FindBy(xpath = "//div[@class='inventory_item_name '][text()='%s']")
     private ExtendedWebElement itemTitle;
@@ -40,6 +45,7 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
             list.add(itemsTitleList.get(i).getText());
         }
 
+        logger.log(Level.INFO, list);
         return list;
     }
 
@@ -52,6 +58,8 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
             double price = Double.parseDouble(priceWithoutDolar);
             list.add(price);
         }
+
+        logger.info(list);
         return list;
     }
 
