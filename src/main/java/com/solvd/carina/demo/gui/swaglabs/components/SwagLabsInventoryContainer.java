@@ -34,8 +34,8 @@ public class SwagLabsInventoryContainer extends AbstractUIObject {
     @FindBy(xpath = "//div[@class='inventory_item_price']")
     private List<ExtendedWebElement> itemsPriceList;
 
-    public SwagLabsInventoryContainer(WebDriver driver, SearchContext searchContext) {
-        super(driver, searchContext);
+    public SwagLabsInventoryContainer(WebDriver driver) {
+        super(driver);
     }
 
     public List<String> getItemsTitleList () {

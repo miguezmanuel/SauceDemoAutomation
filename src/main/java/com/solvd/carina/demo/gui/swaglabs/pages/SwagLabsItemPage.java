@@ -3,6 +3,7 @@ package com.solvd.carina.demo.gui.swaglabs.pages;
 import com.solvd.carina.demo.gui.swaglabs.common.SwagLabsBasePage;
 import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsFooter;
 import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsHeader;
+import com.solvd.carina.demo.gui.swaglabs.components.SwagLabsInventoryContainer;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -24,6 +25,39 @@ public class SwagLabsItemPage extends SwagLabsBasePage {
 
     public SwagLabsItemPage(WebDriver driver) {
         super(driver);
+    }
+
+    public SwagLabsInventoryContainer clickBackToProductsButton () {
+        backToProductsButton.click();
+        return new SwagLabsInventoryContainer(getDriver());
+    }
+
+    public boolean isBackToProductsButtonClickable () {
+        return addToCartButton.isClickable();
+    }
+
+    public void clickAddToCartButton () {
+        addToCartButton.click();
+    }
+
+    public boolean isAddToCartButtonClickable () {
+        return addToCartButton.isClickable();
+    }
+
+    public void clickRemoveButton () {
+        removeButton.click();
+    }
+
+    public String getItemTitle () {
+        return itemTitle.getText();
+    }
+
+    public String getItemDescription () {
+        return itemDescription.getText();
+    }
+
+    public String getItemPrice () {
+        return itemPrice.getText();
     }
 
     @Override

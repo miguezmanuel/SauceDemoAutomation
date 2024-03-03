@@ -4,6 +4,7 @@ import com.solvd.carina.demo.gui.swaglabs.common.FilterType;
 import com.solvd.carina.demo.gui.swaglabs.components.*;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsCartPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsInventoryPage;
+import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsItemPage;
 import com.solvd.carina.demo.gui.swaglabs.pages.SwagLabsLoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.webdriver.DriverHelper;
@@ -109,6 +110,32 @@ public class WebSwagLabsTest implements IAbstractTest {
         header.clickSideMenuButton();
         sideMenu.clickAboutButton();
         Assert.assertFalse(header.isTitlePresent(), "title present, about button or side menu might have failed");
+
+    }
+
+    @Test
+    public void itemPageTest () {
+        SwagLabsLoginPage loginPage = new SwagLabsLoginPage(getDriver());
+        SwagLabsLoginForm loginForm = loginPage.getLoginForm();
+        SwagLabsInventoryPage inventoryPage = new SwagLabsInventoryPage(getDriver());
+        SwagLabsInventoryContainer inventoryContainer = inventoryPage.getInventoryContainer();
+        SwagLabsItemPage itemPage = new SwagLabsItemPage(getDriver());
+        SwagLabsHeader header = itemPage.getHeader();
+        String element = "Sauce Labs Onesie";
+
+        loginPage.open();
+        loginForm.login();
+        Assert.assertTrue(header.isTitlePresent(), "title not present, login might have failed");
+
+        inventoryContainer.clickItemTitle(element);
+        Assert.assertTrue(itemPage.isBackToProductsButtonClickable(), "back to products button not clickable");
+        Assert.assertEquals(itemPage.getItemTitle(), element, "titles not equal");
+
+        itemPage.clickAddToCartButton();
+        Assert.assertFalse(itemPage.isAddToCartButtonClickable(), "add to cart button clickable after clicking it");
+        itemPage.clickRemoveButton();
+
+        itemPage.clickBackToProductsButton();
 
     }
 
