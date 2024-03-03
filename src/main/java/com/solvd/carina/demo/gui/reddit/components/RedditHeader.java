@@ -37,7 +37,7 @@ public class RedditHeader extends AbstractUIObject {
         searchBarInputField.type(searchInput);
     }
 
-    public void typeSearchB (String searchInput) {
+    public void clearSearchBar (String searchInput) {
         while(!searchInput.isEmpty()){
             searchBarInputField.sendKeys(Keys.BACK_SPACE);
         }
