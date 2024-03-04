@@ -10,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import com.zebrunner.carina.core.IAbstractTest;
-import com.solvd.carina.demo.api.DeleteUserMethod;
-import com.solvd.carina.demo.api.GetUserMethods;
-import com.solvd.carina.demo.api.PostUserMethod;
+import com.solvd.carina.demo.api.sample.DeleteUserMethod;
+import com.solvd.carina.demo.api.sample.GetUserMethods;
+import com.solvd.carina.demo.api.sample.PostUserMethod;
 import com.zebrunner.carina.api.APIMethodPoller;
 import com.zebrunner.carina.api.apitools.validation.JsonCompareKeywords;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
