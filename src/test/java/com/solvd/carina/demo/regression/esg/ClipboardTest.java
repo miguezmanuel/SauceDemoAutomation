@@ -1,7 +1,7 @@
 package com.solvd.carina.demo.regression.esg;
 
 import com.zebrunner.carina.core.IAbstractTest;
-import com.solvd.carina.demo.gui.pages.common.HomePageBase;
+import com.solvd.carina.demo.gui.samples.pages.common.HomePageBase;
 import com.solvd.carina.demo.websocket.EndpointUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

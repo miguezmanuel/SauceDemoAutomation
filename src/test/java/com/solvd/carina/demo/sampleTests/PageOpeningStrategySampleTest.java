@@ -3,8 +3,8 @@ package com.solvd.carina.demo.sampleTests;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.solvd.carina.demo.gui.pages.common.CompareModelsPageBase;
-import com.solvd.carina.demo.gui.pages.common.HomePageBase;
+import com.solvd.carina.demo.gui.samples.pages.common.CompareModelsPageBase;
+import com.solvd.carina.demo.gui.samples.pages.common.HomePageBase;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.webdriver.decorator.PageOpeningStrategy;

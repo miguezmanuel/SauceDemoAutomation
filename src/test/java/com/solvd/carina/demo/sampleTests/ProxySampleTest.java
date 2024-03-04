@@ -2,8 +2,8 @@ package com.solvd.carina.demo.sampleTests;
 
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
-import com.solvd.carina.demo.gui.pages.desktop.HomePage;
-import com.solvd.carina.demo.gui.pages.desktop.NewsPage;
+import com.solvd.carina.demo.gui.samples.pages.desktop.HomePage;
+import com.solvd.carina.demo.gui.samples.pages.desktop.NewsPage;
 import com.zebrunner.carina.utils.R;
 import com.zebrunner.carina.utils.config.Configuration;
 import com.zebrunner.carina.utils.report.SessionContext;

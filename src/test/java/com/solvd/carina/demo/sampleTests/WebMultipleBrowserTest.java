@@ -9,9 +9,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.solvd.carina.demo.gui.pages.common.HomePageBase;
-import com.solvd.carina.demo.gui.pages.common.NewsPageBase;
-import com.solvd.carina.demo.gui.components.NewsItem;
+import com.solvd.carina.demo.gui.samples.pages.common.HomePageBase;
+import com.solvd.carina.demo.gui.samples.pages.common.NewsPageBase;
+import com.solvd.carina.demo.gui.samples.components.NewsItem;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import com.zebrunner.carina.webdriver.Screenshot;

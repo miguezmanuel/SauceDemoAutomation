@@ -8,11 +8,11 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.solvd.carina.demo.gui.components.footer.FooterMenuBase;
-import com.solvd.carina.demo.gui.pages.common.CompareModelsPageBase;
-import com.solvd.carina.demo.gui.pages.common.HomePageBase;
-import com.solvd.carina.demo.gui.components.compare.ModelSpecs;
-import com.solvd.carina.demo.gui.components.compare.ModelSpecs.SpecType;
+import com.solvd.carina.demo.gui.samples.components.footer.FooterMenuBase;
+import com.solvd.carina.demo.gui.samples.pages.common.CompareModelsPageBase;
+import com.solvd.carina.demo.gui.samples.pages.common.HomePageBase;
+import com.solvd.carina.demo.gui.samples.components.compare.ModelSpecs;
+import com.solvd.carina.demo.gui.samples.components.compare.ModelSpecs.SpecType;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.agent.core.annotation.TestLabel;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
