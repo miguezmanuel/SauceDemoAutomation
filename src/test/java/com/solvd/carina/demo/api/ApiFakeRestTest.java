@@ -10,6 +10,6 @@ public class ApiFakeRestTest implements IAbstractTest {
     public void getActivitiestTest () {
         GetActivities getActivities = new GetActivities();
         getActivities.callAPIExpectSuccess();
-        getActivities.validateResponse();
+        getActivities.validateResponseAgainstSchema("api/fakeRestAPI/activities/schema/get_activities_rs.json");
     }
 }

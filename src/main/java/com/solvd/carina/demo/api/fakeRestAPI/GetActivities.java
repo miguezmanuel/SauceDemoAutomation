@@ -11,11 +11,11 @@ import com.zebrunner.carina.utils.config.Configuration;
 import java.util.Properties;
 
 @Endpoint(url = "${api_url}/api/v1/Activities", methodType = HttpMethodType.GET)
-@ResponseTemplatePath(path = "test/resources/api/fakeRestAPI/activities/get_activities_rs.json")
+@ResponseTemplatePath(path = "api/fakeRestAPI/activities/get_activities_rs.json")
 @SuccessfulHttpStatus(status = HttpResponseStatusType.OK_200)
 public class GetActivities extends AbstractApiMethodV2 {
     public GetActivities() {
-        replaceUrlPlaceholder("api_url", Configuration.get("api_url").toString());
+        replaceUrlPlaceholder("api_url", Configuration.get("api_url").get());
     }
 
 }
