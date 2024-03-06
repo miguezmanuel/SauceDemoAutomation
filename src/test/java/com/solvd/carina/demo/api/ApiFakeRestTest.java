@@ -3,6 +3,7 @@ package com.solvd.carina.demo.api;
 import com.solvd.carina.demo.api.fakeRestAPI.DeleteActivities;
 import com.solvd.carina.demo.api.fakeRestAPI.GetActivities;
 import com.solvd.carina.demo.api.fakeRestAPI.PostActivity;
+import com.solvd.carina.demo.api.fakeRestAPI.PutActivity;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.annotations.Test;
 
@@ -26,5 +27,12 @@ public class ApiFakeRestTest implements IAbstractTest {
         PostActivity postActivity = new PostActivity();
         postActivity.callAPIExpectSuccess();
         postActivity.validateResponse();
+    }
+
+    @Test
+    public void putActivityTest () {
+        PutActivity putActivity = new PutActivity(1);
+        putActivity.callAPIExpectSuccess();
+        putActivity.validateResponse();
     }
 }
