@@ -1,0 +1,206 @@
+[2024-03-05 04:47:21] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-05 04:47:21] [1] [INFO] TEST [WebTestAutomation - getActivitiestTest] STARTED at [13:47:21 2024-03-05]
+[2024-03-05 04:47:24] [1] [INFO] Request method:	GET
+Request URI:	https://fakerestapi.azurewebsites.net/api/v1/Activities
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Multiparts:		<none>
+Cookies:		<none>
+Headers:		Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Body:			<none>
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8; v=1.0
+Date: Tue, 05 Mar 2024 16:47:23 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+api-supported-versions: 1.0
+
+[
+    {
+        "id": 1,
+        "title": "Activity 1",
+        "dueDate": "2024-03-05T17:47:24.3054832+00:00",
+        "completed": false
+    },
+    {
+        "id": 2,
+        "title": "Activity 2",
+        "dueDate": "2024-03-05T18:47:24.3054861+00:00",
+        "completed": true
+    },
+    {
+        "id": 3,
+        "title": "Activity 3",
+        "dueDate": "2024-03-05T19:47:24.3054864+00:00",
+        "completed": false
+    },
+    {
+        "id": 4,
+        "title": "Activity 4",
+        "dueDate": "2024-03-05T20:47:24.3054867+00:00",
+        "completed": true
+    },
+    {
+        "id": 5,
+        "title": "Activity 5",
+        "dueDate": "2024-03-05T21:47:24.3054869+00:00",
+        "completed": false
+    },
+    {
+        "id": 6,
+        "title": "Activity 6",
+        "dueDate": "2024-03-05T22:47:24.3054874+00:00",
+        "completed": true
+    },
+    {
+        "id": 7,
+        "title": "Activity 7",
+        "dueDate": "2024-03-05T23:47:24.3054877+00:00",
+        "completed": false
+    },
+    {
+        "id": 8,
+        "title": "Activity 8",
+        "dueDate": "2024-03-06T00:47:24.305488+00:00",
+        "completed": true
+    },
+    {
+        "id": 9,
+        "title": "Activity 9",
+        "dueDate": "2024-03-06T01:47:24.3054882+00:00",
+        "completed": false
+    },
+    {
+        "id": 10,
+        "title": "Activity 10",
+        "dueDate": "2024-03-06T02:47:24.3054887+00:00",
+        "completed": true
+    },
+    {
+        "id": 11,
+        "title": "Activity 11",
+        "dueDate": "2024-03-06T03:47:24.305489+00:00",
+        "completed": false
+    },
+    {
+        "id": 12,
+        "title": "Activity 12",
+        "dueDate": "2024-03-06T04:47:24.3054893+00:00",
+        "completed": true
+    },
+    {
+        "id": 13,
+        "title": "Activity 13",
+        "dueDate": "2024-03-06T05:47:24.3054895+00:00",
+        "completed": false
+    },
+    {
+        "id": 14,
+        "title": "Activity 14",
+        "dueDate": "2024-03-06T06:47:24.3054898+00:00",
+        "completed": true
+    },
+    {
+        "id": 15,
+        "title": "Activity 15",
+        "dueDate": "2024-03-06T07:47:24.3054901+00:00",
+        "completed": false
+    },
+    {
+        "id": 16,
+        "title": "Activity 16",
+        "dueDate": "2024-03-06T08:47:24.3054903+00:00",
+        "completed": true
+    },
+    {
+        "id": 17,
+        "title": "Activity 17",
+        "dueDate": "2024-03-06T09:47:24.3054906+00:00",
+        "completed": false
+    },
+    {
+        "id": 18,
+        "title": "Activity 18",
+        "dueDate": "2024-03-06T10:47:24.305491+00:00",
+        "completed": true
+    },
+    {
+        "id": 19,
+        "title": "Activity 19",
+        "dueDate": "2024-03-06T11:47:24.3054912+00:00",
+        "completed": false
+    },
+    {
+        "id": 20,
+        "title": "Activity 20",
+        "dueDate": "2024-03-06T12:47:24.3054915+00:00",
+        "completed": true
+    },
+    {
+        "id": 21,
+        "title": "Activity 21",
+        "dueDate": "2024-03-06T13:47:24.3054917+00:00",
+        "completed": false
+    },
+    {
+        "id": 22,
+        "title": "Activity 22",
+        "dueDate": "2024-03-06T14:47:24.305492+00:00",
+        "completed": true
+    },
+    {
+        "id": 23,
+        "title": "Activity 23",
+        "dueDate": "2024-03-06T15:47:24.3054922+00:00",
+        "completed": false
+    },
+    {
+        "id": 24,
+        "title": "Activity 24",
+        "dueDate": "2024-03-06T16:47:24.3054925+00:00",
+        "completed": true
+    },
+    {
+        "id": 25,
+        "title": "Activity 25",
+        "dueDate": "2024-03-06T17:47:24.3054927+00:00",
+        "completed": false
+    },
+    {
+        "id": 26,
+        "title": "Activity 26",
+        "dueDate": "2024-03-06T18:47:24.305493+00:00",
+        "completed": true
+    },
+    {
+        "id": 27,
+        "title": "Activity 27",
+        "dueDate": "2024-03-06T19:47:24.3054933+00:00",
+        "completed": false
+    },
+    {
+        "id": 28,
+        "title": "Activity 28",
+        "dueDate": "2024-03-06T20:47:24.3054935+00:00",
+        "completed": true
+    },
+    {
+        "id": 29,
+        "title": "Activity 29",
+        "dueDate": "2024-03-06T21:47:24.3054938+00:00",
+        "completed": false
+    },
+    {
+        "id": 30,
+        "title": "Activity 30",
+        "dueDate": "2024-03-06T22:47:24.305494+00:00",
+        "completed": true
+    }
+]
+
+[2024-03-05 04:47:24] [1] [INFO] JSON schema of version below or equal to draft-04 was detected
+[2024-03-05 04:47:24] [1] [INFO] Validation against Json schema successfully passed
+[2024-03-05 04:47:24] [1] [INFO] TEST [WebTestAutomation - getActivitiestTest] PASSED at [13:47:24 2024-03-05]
