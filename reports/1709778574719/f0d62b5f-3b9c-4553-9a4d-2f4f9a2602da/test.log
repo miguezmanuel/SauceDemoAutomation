@@ -1,0 +1,9 @@
+[2024-03-07 02:29:50] [1] [INFO] TEST [WebTestAutomation - loginTest [L02]] STARTED at [23:29:50 2024-03-06]
+[2024-03-07 02:29:50] [1] [INFO] Starting driver session...
+[2024-03-07 02:29:50] [1] [INFO] Set Chrome language to: en
+[2024-03-07 02:29:51] [1] [INFO] Driver session started.
+[2024-03-07 02:29:54] [1] [INFO] URL 'https://www.automationexercise.com/login' opened
+[2024-03-07 02:29:54] [1] [INFO] PASS: keys 'testTwo@gmail.com' are sent to element 'emailInputField'.
+[2024-03-07 02:29:55] [1] [INFO] PASS: keys 'password' are sent to element 'passwordInputField'.
+[2024-03-07 02:29:57] [1] [INFO] PASS: element 'loginButton' is clicked.
+[2024-03-07 02:29:58] [1] [INFO] TEST [WebTestAutomation - loginTest [L02]] PASSED at [23:29:58 2024-03-06]

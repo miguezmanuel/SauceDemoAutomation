@@ -16,6 +16,8 @@ public class AutomationLoginForm extends AbstractUIObject {
     private ExtendedWebElement passwordInputField;
     @FindBy(xpath = "//button[@data-qa='login-button']")
     private ExtendedWebElement loginButton;
+    @FindBy(xpath = "//p[text()='Your email or password is incorrect!']")
+    private ExtendedWebElement errorLoginMessage;
 
     public AutomationLoginForm(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
