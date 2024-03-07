@@ -1,0 +1,26 @@
+[2024-03-07 01:04:22] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.automationexercise.com/
+browser_language=en
+selenium_url=http://localhost:4444/wd/hub
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+browserName=chrome
+===============================================
+
+[2024-03-07 01:04:22] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-07 01:04:26] [1] [INFO] [TestNG] Running:
+  C:\Users\manue\AppData\Local\JetBrains\IdeaIC2023.1\temp-testng-customsuite.xml
+
+[2024-03-07 01:04:26] [1] [INFO] Set thread-count=1
+[2024-03-07 01:04:26] [1] [INFO] Set data-provider-thread-count=1
+[2024-03-07 01:04:26] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-03-07 01:04:44] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-03-07 01:04:44] [1] [INFO] RESULT #1: TEST [WebTestAutomation - checkCartItemAdded [L01]] FAIL [screenshots=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1709816662447/aa6f46d3-5fee-4d65-9ab8-f6a115961e8f/report.html | log=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1709816662447/aa6f46d3-5fee-4d65-9ab8-f6a115961e8f/test.log]
+[2024-03-07 01:04:44] [1] [INFO] RESULT #2: TEST [WebTestAutomation - checkCartItemAdded [L02]] FAIL [screenshots=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1709816662447/7aacf14e-e302-4c24-bd12-ffd0c524afa5/report.html | log=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1709816662447/7aacf14e-e302-4c24-bd12-ffd0c524afa5/test.log]

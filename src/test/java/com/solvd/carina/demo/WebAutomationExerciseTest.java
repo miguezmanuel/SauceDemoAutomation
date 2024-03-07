@@ -1,17 +1,24 @@
 package com.solvd.carina.demo;
 
-import com.solvd.carina.demo.gui.automationExercise.components.AutomationHeader;
-import com.solvd.carina.demo.gui.automationExercise.components.AutomationLoginForm;
+import com.solvd.carina.demo.gui.automationExercise.components.*;
 import com.solvd.carina.demo.gui.automationExercise.pages.AutomationAuthPage;
+import com.solvd.carina.demo.gui.automationExercise.pages.AutomationCartPage;
 import com.solvd.carina.demo.gui.automationExercise.pages.AutomationHomePage;
+import com.solvd.carina.demo.gui.automationExercise.pages.AutomationProductsPage;
 import com.zebrunner.carina.core.IAbstractTest;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 
 //https://www.automationexercise.com/
 public class WebAutomationExerciseTest implements IAbstractTest {
+
+    Logger logger = (Logger) LogManager.getLogger();
 
     @Test(dataProvider = "loginData")
     public void loginTest (String email, String password) {
@@ -29,6 +36,67 @@ public class WebAutomationExerciseTest implements IAbstractTest {
         Assert.assertTrue(loginForm.isLoginButtonClickable(), "Login button not clickable");
         loginForm.clickLoginButton();
 
+    }
+
+    @Test
+    public void checkTitlesList () {
+        AutomationProductsPage productsPage = new AutomationProductsPage(getDriver());
+        AutomationProductsContainer productsContainer = productsPage.getProductsContainer();
+
+        getDriver().navigate().to("https://www.automationexercise.com/products");
+
+        List<String> productTitleList = productsContainer.getTitlesList();
+        Assert.assertTrue(productTitleList.contains("Blue Top"));
+
+        logger.info(productTitleList);
+    }
+
+    @Test
+    public void checkPricesList () {
+        AutomationProductsPage productsPage = new AutomationProductsPage(getDriver());
+        AutomationProductsContainer productsContainer = productsPage.getProductsContainer();
+
+        getDriver().navigate().to("https://www.automationexercise.com/products");
+
+        List<String> productPricesList = productsContainer.getPricesList();
+        Assert.assertTrue(productPricesList.contains("Rs. 500"));
+
+        logger.info(productPricesList);
+    }
+
+    @Test(dataProvider = "productsData")
+    public void checkCartItemAdded (String id, String itemName, String itemPrice) {
+        AutomationProductsPage productsPage = new AutomationProductsPage(getDriver());
+        AutomationProductsContainer productsContainer = productsPage.getProductsContainer();
+        AutomationCartPage cartPage = new AutomationCartPage(getDriver());
+        AutomationCartProducstTable cartProductsTable = cartPage.getCartProductsTable();
+        AutomationHeader header = productsPage.getHeader();
+        AutomationAddedToCartAlert addedToCartAlert = productsPage.getAddedToCartAlert();
+
+        getDriver().navigate().to("https://www.automationexercise.com/products");
+
+        productsContainer.clickAddToCartButton(itemName);
+        addedToCartAlert.clickContinueShoppingButton();
+        header.clickCartButton();
+
+        List<String> cartProductsTitleList = cartProductsTable.getProductTitleList();
+        List<String> cartProductsPriceList = cartProductsTable.getProductPriceList();
+
+        String productTitle = cartProductsTitleList.get(Integer.parseInt(id));
+        String productPrice = cartProductsPriceList.get(Integer.parseInt(id));
+        String productTitleByName = cartProductsTable.getProductTitleFromName(itemName);
+
+        Assert.assertEquals(productTitle, itemName);
+        Assert.assertEquals(productPrice, itemPrice);
+        Assert.assertEquals(productTitle, productTitleByName);
+    }
+
+    @DataProvider(name = "productsData")
+    public Object [][] productsData () {
+        return new Object[][] {
+                {"0", "Blue Top", "Rs. 500"},
+                {"0", "Men Tshirt", "Rs. 400"},
+        };
     }
 
     @DataProvider(name = "loginData")

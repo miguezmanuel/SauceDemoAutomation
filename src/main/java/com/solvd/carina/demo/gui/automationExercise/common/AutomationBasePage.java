@@ -1,8 +1,6 @@
 package com.solvd.carina.demo.gui.automationExercise.common;
 
-import com.solvd.carina.demo.gui.automationExercise.components.AutomationHeader;
-import com.solvd.carina.demo.gui.automationExercise.components.AutomationLoginForm;
-import com.solvd.carina.demo.gui.automationExercise.components.AutomationSignUpForm;
+import com.solvd.carina.demo.gui.automationExercise.components.*;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -15,6 +13,12 @@ public class AutomationBasePage extends AbstractPage {
     private AutomationSignUpForm signUpForm;
     @FindBy(xpath = "//div[@class='logo pull-left']/ancestor::div[@class='row']")
     private AutomationHeader header;
+    @FindBy(xpath = "//div[@class='features_items']")
+    private AutomationProductsContainer productsContainer;
+    @FindBy(xpath = "//div[@class='table-responsive cart_info']")
+    private AutomationCartProducstTable cartProductsTable;
+    @FindBy(xpath = "//div[@class='modal-content']")
+    private AutomationAddedToCartAlert addedToCartAlert;
 
     public AutomationBasePage(WebDriver driver) {
         super(driver);
@@ -30,5 +34,17 @@ public class AutomationBasePage extends AbstractPage {
 
     public AutomationHeader getHeader() {
         return header;
+    }
+
+    public AutomationProductsContainer getProductsContainer() {
+        return productsContainer;
+    }
+
+    public AutomationCartProducstTable getCartProductsTable() {
+        return cartProductsTable;
+    }
+
+    public AutomationAddedToCartAlert getAddedToCartAlert() {
+        return addedToCartAlert;
     }
 }

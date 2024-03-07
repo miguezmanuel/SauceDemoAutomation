@@ -1,6 +1,7 @@
 package com.solvd.carina.demo.gui.automationExercise.components;
 
 import com.solvd.carina.demo.gui.automationExercise.pages.AutomationAuthPage;
+import com.solvd.carina.demo.gui.automationExercise.pages.AutomationCartPage;
 import com.solvd.carina.demo.gui.automationExercise.pages.AutomationHomePage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
@@ -51,8 +52,9 @@ public class AutomationHeader extends AbstractUIObject {
         productsButton.click();
     }
 
-    public void clickCartButton () {
+    public AutomationCartPage clickCartButton () {
         cartButton.click();
+        return new AutomationCartPage(getDriver());
     }
 
     public AutomationAuthPage clickSignupAndLoginButton () {

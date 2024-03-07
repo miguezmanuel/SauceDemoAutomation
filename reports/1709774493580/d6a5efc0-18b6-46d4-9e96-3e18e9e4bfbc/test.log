@@ -1,5 +1,0 @@
-[2024-03-07 01:21:37] [1] [WARN] Reporting disabled: using no op test run registrar
-[2024-03-07 01:21:37] [1] [INFO] TEST [WebTestAutomation - loginTest [L01]] STARTED at [22:21:37 2024-03-06]
-[2024-03-07 01:21:37] [1] [INFO] Starting driver session...
-[2024-03-07 01:21:37] [1] [INFO] Set Chrome language to: en
-[2024-03-07 01:21:42] [1] [INFO] Driver session started.

@@ -1,0 +1,10 @@
+[2024-03-07 01:14:27] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-07 01:14:27] [1] [INFO] TEST [WebTestAutomation - checkCartItemAdded [L01]] STARTED at [10:14:27 2024-03-07]
+[2024-03-07 01:14:27] [1] [INFO] Starting driver session...
+[2024-03-07 01:14:27] [1] [INFO] Set Chrome language to: en
+[2024-03-07 01:14:31] [1] [INFO] Driver session started.
+[2024-03-07 01:14:36] [1] [INFO] URL 'https://www.automationexercise.com/products' opened
+[2024-03-07 01:14:37] [1] [INFO] PASS: element 'addToCartButton' is clicked.
+[2024-03-07 01:14:37] [1] [INFO] PASS: element 'continueShoppingButton' is clicked.
+[2024-03-07 01:14:39] [1] [INFO] PASS: element 'cartButton' is clicked.
+[2024-03-07 01:14:52] [1] [INFO] TEST [WebTestAutomation - checkCartItemAdded [L01]] PASSED at [10:14:52 2024-03-07]
