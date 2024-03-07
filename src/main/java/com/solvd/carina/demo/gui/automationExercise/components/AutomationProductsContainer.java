@@ -40,6 +40,10 @@ public class AutomationProductsContainer extends AbstractUIObject {
         return containerTitle.isPresent();
     }
 
+    public String getContainerTitleXpath () {
+        return containerTitle.getLocation().toString();
+    }
+
     public void clickProductTitle (String itemTitle) {
         productTitle.format(productTitle).click();
     }
