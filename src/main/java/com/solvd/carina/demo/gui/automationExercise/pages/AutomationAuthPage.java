@@ -1,8 +1,8 @@
 package com.solvd.carina.demo.gui.automationExercise.pages;
 
 import com.solvd.carina.demo.gui.automationExercise.common.AutomationBasePage;
-import com.solvd.carina.demo.gui.automationExercise.components.LoginForm;
-import com.solvd.carina.demo.gui.automationExercise.components.SignUpForm;
+import com.solvd.carina.demo.gui.automationExercise.components.AutomationLoginForm;
+import com.solvd.carina.demo.gui.automationExercise.components.AutomationSignUpForm;
 import org.openqa.selenium.WebDriver;
 
 public class AutomationAuthPage extends AutomationBasePage {
@@ -11,12 +11,12 @@ public class AutomationAuthPage extends AutomationBasePage {
     }
 
     @Override
-    public LoginForm getLoginForm() {
+    public AutomationLoginForm getLoginForm() {
         return super.getLoginForm();
     }
 
     @Override
-    public SignUpForm getSignUpForm() {
+    public AutomationSignUpForm getSignUpForm() {
         return super.getSignUpForm();
     }
 }

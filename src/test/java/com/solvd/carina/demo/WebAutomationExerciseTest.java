@@ -1,19 +1,22 @@
 package com.solvd.carina.demo;
 
-import com.solvd.carina.demo.gui.automationExercise.components.LoginForm;
+import com.solvd.carina.demo.gui.automationExercise.components.AutomationLoginForm;
 import com.solvd.carina.demo.gui.automationExercise.pages.AutomationAuthPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+
+//https://www.automationexercise.com/
 public class WebAutomationExerciseTest implements IAbstractTest {
 
     @Test(dataProvider = "loginData")
     public void loginTest (String email, String password) {
         AutomationAuthPage authPage = new AutomationAuthPage(getDriver());
-        LoginForm loginForm = authPage.getLoginForm();
+        AutomationLoginForm loginForm = authPage.getLoginForm();
 
+        authPage.open();
         Assert.assertTrue(loginForm.isTitlePresent(), "Title not present");
         Assert.assertEquals(loginForm.getTitleText(), "Login to your account", "text title present not correct");
 
