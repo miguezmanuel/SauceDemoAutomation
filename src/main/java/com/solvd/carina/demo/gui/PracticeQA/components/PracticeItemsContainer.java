@@ -31,6 +31,17 @@ public class PracticeItemsContainer extends AbstractUIObject {
         addToCartByItem.format(name).click();
     }
 
+    public List<String> getItemsTitleList () {
+        List<String> list = new ArrayList<>();
+
+        for (int i = 0; i < itemTitlesList.size() - 1; i++) {
+            String element = itemTitlesList.get(i).getText();
+            list.add(element);
+        }
+
+        return list;
+    }
+
     public List<String> getItemsPricesList () {
         List<String> list = new ArrayList<>();
 

@@ -5,6 +5,8 @@ import com.solvd.carina.demo.gui.PracticeQA.components.PracticeItemsContainer;
 import com.solvd.carina.demo.gui.PracticeQA.pages.PracticeProductsPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import com.zebrunner.carina.utils.config.Configuration;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -14,6 +16,8 @@ import java.util.List;
 
 //https://qa-practice.netlify.app/
 public class WebPracticeQaTest implements IAbstractTest {
+
+    Logger logger = (Logger) LogManager.getLogger();
 
     @Test(dataProvider = "productsData")
     public void checkCartItems (String name, String price) {
@@ -34,6 +38,18 @@ public class WebPracticeQaTest implements IAbstractTest {
             Assert.assertEquals(element, elementTwo);
         }
 
+    }
+
+    @Test
+    public void checkProductsList () {
+        PracticeProductsPage productsPage = new PracticeProductsPage(getDriver());
+        PracticeItemsContainer practiceItemsContainer = productsPage.getItemsContainer();
+
+        getDriver().navigate().to("https://qa-practice.netlify.app/products_list");
+
+        List<String> productsList = practiceItemsContainer.getItemsTitleList();
+        logger.info(productsList);
+        Assert.assertTrue(!productsList.isEmpty(), "list empty");
     }
 
     private void addToCart (String name) {
