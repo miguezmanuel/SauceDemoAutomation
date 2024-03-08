@@ -26,6 +26,10 @@ public class PracticeCartItemsContainer extends AbstractUIObject {
         super(driver, searchContext);
     }
 
+    public boolean isTitlePresent (String name) {
+        return itemTitle.format(name).isPresent();
+    }
+
     public String getItemTitleByName (String name) {
         return itemTitle.format(name).getText();
     }
