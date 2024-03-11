@@ -17,7 +17,7 @@ public class PracticeItemsContainer extends AbstractUIObject {
     private ExtendedWebElement itemTitle;
     @FindBy(xpath = "//span[@class='shop-item-title'][text()='%s']/..//img")
     private ExtendedWebElement itemImage;
-    @FindBy(xpath = "//button[@class='btn btn-primary shop-item-button']/ancestor::div[@class='shop-item']//span[text()='%s']")
+    @FindBy(xpath = "//button[@class='btn btn-primary shop-item-button']/ancestor::div[@class='shop-item']//span[text()='Apple iPhone 12, 128GB, Black']")
     private ExtendedWebElement addToCartByItem;
     @FindBy(xpath = "//span[@class='shop-item-title']")
     private List<ExtendedWebElement> itemTitlesList;
