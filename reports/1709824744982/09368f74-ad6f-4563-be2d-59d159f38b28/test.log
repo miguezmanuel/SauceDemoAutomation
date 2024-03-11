@@ -1,9 +1,0 @@
-[2024-03-07 03:19:21] [1] [INFO] TEST [WebTestAutomation - checkCartItemAdded [L02]] STARTED at [12:19:21 2024-03-07]
-[2024-03-07 03:19:21] [1] [INFO] Starting driver session...
-[2024-03-07 03:19:21] [1] [INFO] Set Chrome language to: en
-[2024-03-07 03:19:22] [1] [INFO] Driver session started.
-[2024-03-07 03:19:25] [1] [INFO] URL 'https://www.automationexercise.com/products' opened
-[2024-03-07 03:19:26] [1] [INFO] PASS: element 'addToCartButton' is clicked.
-[2024-03-07 03:19:26] [1] [INFO] PASS: element 'continueShoppingButton' is clicked.
-[2024-03-07 03:19:29] [1] [INFO] PASS: element 'cartButton' is clicked.
-[2024-03-07 03:19:29] [1] [INFO] TEST [WebTestAutomation - checkCartItemAdded [L02]] PASSED at [12:19:29 2024-03-07]

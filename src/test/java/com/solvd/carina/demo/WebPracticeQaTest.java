@@ -56,28 +56,6 @@ public class WebPracticeQaTest implements IAbstractTest {
         Assert.assertTrue(!productsList.isEmpty(), "list empty");
     }
 
-    private void addToCart (String name) {
-        PracticeProductsPage productsPage = new PracticeProductsPage(getDriver());
-        PracticeItemsContainer itemsContainer = productsPage.getItemsContainer();
-        PracticeCartItemsContainer cartItemsContainer = productsPage.getCartItemsContainer();
-
-        FluentWait fluentWait = new FluentWait<>(getDriver());
-        getDriver().navigate().to("https://qa-practice.netlify.app/products_list");
-
-        itemsContainer.clickAddToCartByItem(name);
-        Assert.assertTrue(cartItemsContainer.isTitlePresent(name), "title not present, add to cart button does not work");
-        cartItemsContainer.removeItemFromCartByName(name);
-        Assert.assertFalse(cartItemsContainer.isTitlePresent(name), "title present, remove button does not work");
-    }
-
-    @DataProvider(name = "productsData")
-    private Object[][] productsData () {
-        return new Object[][] {
-                {"Apple iPhone 12, 128GB, Black","$905.99"},
-                {"Huawei Mate 20 Lite, 64GB, Black","$236.12"}
-        };
-    }
-
     @Test(dataProvider = "loginWrongData")
     public void checkLoginFormTest (String email, String password) {
         PracticeLoginPage loginPage = new PracticeLoginPage(getDriver());
@@ -103,6 +81,25 @@ public class WebPracticeQaTest implements IAbstractTest {
         loginForm.typeEmailInputField(emailInfo);
         loginForm.typePasswordInputField(passwordInfo);
         loginForm.clickSubmitButton();
+    }
+
+    private void addToCart (String name) {
+        PracticeProductsPage productsPage = new PracticeProductsPage(getDriver());
+        PracticeItemsContainer itemsContainer = productsPage.getItemsContainer();
+        PracticeCartItemsContainer cartItemsContainer = productsPage.getCartItemsContainer();
+
+        itemsContainer.clickAddToCartByItem(name);
+        Assert.assertTrue(cartItemsContainer.isTitlePresent(name), "title not present, add to cart button does not work");
+        cartItemsContainer.removeItemFromCartByName(name);
+        Assert.assertFalse(cartItemsContainer.isTitlePresent(name), "title present, remove button does not work");
+    }
+
+    @DataProvider(name = "productsData")
+    private Object[][] productsData () {
+        return new Object[][] {
+                {"Apple iPhone 12, 128GB, Black","$905.99"},
+                {"Huawei Mate 20 Lite, 64GB, Black","$236.12"}
+        };
     }
     @DataProvider
     private Object[][] loginWrongData () {
