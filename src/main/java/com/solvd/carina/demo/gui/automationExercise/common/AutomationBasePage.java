@@ -20,6 +20,9 @@ public class AutomationBasePage extends AbstractPage {
     @FindBy(xpath = "//div[@class='modal-content']")
     private AutomationAddedToCartAlert addedToCartAlert;
 
+    @FindBy(xpath = "//form[@id='contact-us-form']")
+    private AutomationGetInTouchForm getInTouchForm;
+
     public AutomationBasePage(WebDriver driver) {
         super(driver);
     }
