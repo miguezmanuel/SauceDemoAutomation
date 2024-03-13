@@ -24,4 +24,28 @@ public class AutomationGetInTouchForm extends AbstractUIObject {
     public AutomationGetInTouchForm(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
+
+    public void typeNameInputField (String name) {
+        nameInputField.type(name);
+    }
+
+    public void typeEmailInputField (String email) {
+        emailInputField.type(email);
+    }
+
+    public void typeSubjectInputField (String subject) {
+        subjectInputField.type(subject);
+    }
+
+    public void typeMessageInputField (String message) {
+        messageInputField.type(message);
+    }
+
+    public void clickChooseFileButton () {
+        chooseFileButton.click();
+    }
+
+    public void clickSubmitButton () {
+        submitButton.click();
+    }
 }
