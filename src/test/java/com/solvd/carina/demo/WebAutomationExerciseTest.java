@@ -1,10 +1,7 @@
 package com.solvd.carina.demo;
 
 import com.solvd.carina.demo.gui.automationExercise.components.*;
-import com.solvd.carina.demo.gui.automationExercise.pages.AutomationAuthPage;
-import com.solvd.carina.demo.gui.automationExercise.pages.AutomationCartPage;
-import com.solvd.carina.demo.gui.automationExercise.pages.AutomationHomePage;
-import com.solvd.carina.demo.gui.automationExercise.pages.AutomationProductsPage;
+import com.solvd.carina.demo.gui.automationExercise.pages.*;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
@@ -101,9 +98,24 @@ public class WebAutomationExerciseTest implements IAbstractTest {
 
     }
 
-    @Test
-    public void checkGetInTouchFormTest () {
+    @Test(dataProvider = "getInTouchData")
+    public void checkGetInTouchFormTest (String name, String email, String subject, String message) {
+        AutomationContactPage contactPage = new AutomationContactPage(getDriver());
+        AutomationGetInTouchForm getInTouchForm = contactPage.getGetInTouchForm();
 
+        getDriver().navigate().to("https://www.automationexercise.com/contact_us");
+
+        fillGetInTouchForm(name, email, subject, message);
+
+    }
+
+    @DataProvider
+    public Object [][] getInTouchData () {
+        return new Object[][] {
+                {"manu", "manumiguez@gmail.com", "error", "im having an error"},
+                {"jhon", "jhon@gmail.com", "I cant buy", "im not able to buy on page"},
+                {"em", "emily@gmail.com", "Contact manager", "I want to contact some manager"},
+        };
     }
 
     @DataProvider(name = "productsData")
@@ -120,6 +132,16 @@ public class WebAutomationExerciseTest implements IAbstractTest {
                 {"testOne@gmail.com", "password"},
                 {"testTwo@gmail.com", "password"}
         };
+    }
+
+    private void fillGetInTouchForm (String name, String email, String subject, String message) {
+        AutomationContactPage contactPage = new AutomationContactPage(getDriver());
+        AutomationGetInTouchForm getInTouchForm = contactPage.getGetInTouchForm();
+
+        getInTouchForm.typeNameInputField(name);
+        getInTouchForm.typeEmailInputField(email);
+        getInTouchForm.typeSubjectInputField(subject);
+        getInTouchForm.typeMessageInputField(message);
     }
 
 }
