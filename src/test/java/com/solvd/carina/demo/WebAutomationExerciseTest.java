@@ -101,6 +101,11 @@ public class WebAutomationExerciseTest implements IAbstractTest {
 
     }
 
+    @Test
+    public void checkGetInTouchFormTest () {
+
+    }
+
     @DataProvider(name = "productsData")
     public Object [][] productsData () {
         return new Object[][] {

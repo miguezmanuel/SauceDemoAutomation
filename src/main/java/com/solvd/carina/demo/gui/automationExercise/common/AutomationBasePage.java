@@ -50,4 +50,8 @@ public class AutomationBasePage extends AbstractPage {
     public AutomationAddedToCartAlert getAddedToCartAlert() {
         return addedToCartAlert;
     }
+
+    public AutomationGetInTouchForm getGetInTouchForm() {
+        return getInTouchForm;
+    }
 }

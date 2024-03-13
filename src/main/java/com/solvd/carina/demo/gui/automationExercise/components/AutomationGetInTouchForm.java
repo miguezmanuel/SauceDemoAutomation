@@ -8,17 +8,17 @@ import org.openqa.selenium.support.FindBy;
 
 public class AutomationGetInTouchForm extends AbstractUIObject {
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@placeholder='Name']")
     private ExtendedWebElement nameInputField;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@placeholder='Email']")
     private ExtendedWebElement emailInputField;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@placeholder='Subject']")
     private ExtendedWebElement subjectInputField;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//textarea[@name='message']")
     private ExtendedWebElement messageInputField;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@type='file']")
     private ExtendedWebElement chooseFileButton;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//input[@type='submit']")
     private ExtendedWebElement submitButton;
 
     public AutomationGetInTouchForm(WebDriver driver, SearchContext searchContext) {
