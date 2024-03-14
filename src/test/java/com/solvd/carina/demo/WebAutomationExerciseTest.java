@@ -5,6 +5,7 @@ import com.solvd.carina.demo.gui.automationExercise.pages.*;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -106,6 +107,16 @@ public class WebAutomationExerciseTest implements IAbstractTest {
         getDriver().navigate().to("https://www.automationexercise.com/contact_us");
 
         fillGetInTouchForm(name, email, subject, message);
+        getInTouchForm.clickSubmitButton();
+
+        try {
+            Alert alert = getDriver().switchTo().alert();
+            alert.accept();
+        } catch (Exception e) {
+            logger.warn("alert not accepted");
+        }
+
+        Assert.assertTrue(contactPage.isSuccessMessageVisible(), "success message not visible");
 
     }
 
@@ -142,6 +153,8 @@ public class WebAutomationExerciseTest implements IAbstractTest {
         getInTouchForm.typeEmailInputField(email);
         getInTouchForm.typeSubjectInputField(subject);
         getInTouchForm.typeMessageInputField(message);
+
+
     }
 
 }
