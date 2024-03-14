@@ -1,0 +1,27 @@
+[2024-03-14 02:26:23] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://qa-practice.netlify.app/
+browser_language=en
+selenium_url=http://localhost:4444/wd/hub
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+browserName=chrome
+===============================================
+
+[2024-03-14 02:26:24] [1] [WARN] Reporting disabled: using no op test run registrar
+[2024-03-14 02:26:28] [1] [INFO] [TestNG] Running:
+  C:\Users\manue\AppData\Local\JetBrains\IdeaIC2023.1\temp-testng-customsuite.xml
+
+[2024-03-14 02:26:28] [1] [INFO] Set thread-count=1
+[2024-03-14 02:26:28] [1] [INFO] Set data-provider-thread-count=1
+[2024-03-14 02:26:28] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2024-03-14 02:26:30] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2024-03-14 02:26:30] [1] [INFO] RESULT #1: TEST [WebTestAutomation - checkGetInTouchFormTest [L01]] FAIL [log=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1710383183905/783530c0-2c1b-4bab-b787-805bbc85e550/test.log]
+[2024-03-14 02:26:30] [1] [INFO] RESULT #2: TEST [WebTestAutomation - checkGetInTouchFormTest [L02]] FAIL [log=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1710383183905/adb94bae-6e6e-4223-95cb-9e746a8b4b75/test.log]
+[2024-03-14 02:26:30] [1] [INFO] RESULT #3: TEST [WebTestAutomation - checkGetInTouchFormTest [L03]] FAIL [log=file://F:\Coding\JavaProjects\Solvd\WebTestAutomation\.\reports\1710383183905/f07dea92-75c3-4d70-9e19-9d8bc772a9a6/test.log]

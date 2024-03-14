@@ -1,6 +1,0 @@
-[2024-03-08 01:16:45] [1] [INFO] TEST [WebTestAutomation - checkCartItems [L02]] STARTED at [22:16:45 2024-03-07]
-[2024-03-08 01:16:45] [1] [INFO] Starting driver session...
-[2024-03-08 01:16:45] [1] [INFO] Set Chrome language to: en
-[2024-03-08 01:16:46] [1] [INFO] Driver session started.
-[2024-03-08 01:16:48] [1] [INFO] URL 'https://qa-practice.netlify.app/products_list' opened
-[2024-03-08 01:16:48] [1] [INFO] PASS: element 'addToCartByItem' is clicked.
