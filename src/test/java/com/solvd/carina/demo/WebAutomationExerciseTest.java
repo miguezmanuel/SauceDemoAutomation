@@ -54,6 +54,16 @@ public class WebAutomationExerciseTest implements IAbstractTest {
     }
 
     @Test
+    public void checkvideoTutorials () {
+        AutomationProductsPage productsPage = new AutomationProductsPage(getDriver());
+        AutomationHeader header = productsPage.getHeader();
+
+        header.clickVideoTutorialsButton();
+        Assert.assertFalse(header.isLogoButtonPresent(), "logo button still present");
+
+    }
+
+    @Test
     public void checkPricesList () {
         AutomationProductsPage productsPage = new AutomationProductsPage(getDriver());
         AutomationProductsContainer productsContainer = productsPage.getProductsContainer();
