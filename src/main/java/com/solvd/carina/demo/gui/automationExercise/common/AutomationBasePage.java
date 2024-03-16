@@ -19,9 +19,10 @@ public class AutomationBasePage extends AbstractPage {
     private AutomationCartProducstTable cartProductsTable;
     @FindBy(xpath = "//div[@class='modal-content']")
     private AutomationAddedToCartAlert addedToCartAlert;
-
     @FindBy(xpath = "//form[@id='contact-us-form']")
     private AutomationGetInTouchForm getInTouchForm;
+    @FindBy(xpath = "//section[@id='form']/descendant::div[@class='container']")
+    private AutomationApiTestingContainer testingContainer;
 
     public AutomationBasePage(WebDriver driver) {
         super(driver);
@@ -53,5 +54,9 @@ public class AutomationBasePage extends AbstractPage {
 
     public AutomationGetInTouchForm getGetInTouchForm() {
         return getInTouchForm;
+    }
+
+    public AutomationApiTestingContainer getTestingContainer() {
+        return testingContainer;
     }
 }
