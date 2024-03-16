@@ -8,13 +8,13 @@ import org.openqa.selenium.support.FindBy;
 
 public class AutomationApiTestingContainer extends AbstractUIObject {
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//h2[@class='title text-center']")
     private ExtendedWebElement title;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//h4[@class='panel-title']")
     private ExtendedWebElement taskList;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//h4[@class='panel-title'][text()='%s']")
     private ExtendedWebElement task;
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//h5")
     private ExtendedWebElement adviseText;
 
     public AutomationApiTestingContainer(WebDriver driver, SearchContext searchContext) {
@@ -25,8 +25,8 @@ public class AutomationApiTestingContainer extends AbstractUIObject {
 
     }
 
-    public void isTitlePresent () {
-
+    public boolean isTitlePresent () {
+        return title.isPresent();
     }
 
     public void getTaskByName () {
