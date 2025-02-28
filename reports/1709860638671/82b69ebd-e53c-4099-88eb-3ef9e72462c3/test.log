@@ -1,7 +1,0 @@
-[2024-03-08 01:17:23] [1] [WARN] Reporting disabled: using no op test run registrar
-[2024-03-08 01:17:24] [1] [INFO] TEST [WebTestAutomation - checkCartItems [L01]] STARTED at [22:17:24 2024-03-07]
-[2024-03-08 01:17:24] [1] [INFO] Starting driver session...
-[2024-03-08 01:17:24] [1] [INFO] Set Chrome language to: en
-[2024-03-08 01:17:26] [1] [INFO] Driver session started.
-[2024-03-08 01:17:27] [1] [INFO] URL 'https://qa-practice.netlify.app/products_list' opened
-[2024-03-08 01:17:28] [1] [INFO] PASS: element 'addToCartByItem' is clicked.

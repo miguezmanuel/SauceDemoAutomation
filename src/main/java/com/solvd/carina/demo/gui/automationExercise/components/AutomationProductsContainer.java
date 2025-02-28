@@ -15,33 +15,22 @@ public class AutomationProductsContainer extends AbstractUIObject {
 
     Logger logger = (Logger) LogManager.getLogger();
 
-    @FindBy(xpath = "//h2[@class='title text-center']")
-    private ExtendedWebElement containerTitle;
-    @FindBy(xpath = "//div[@class='productinfo text-center']/descendant::p[text()='%s']")
+    @FindBy(css = ".productinfo.text-center p")
     private ExtendedWebElement productTitle;
-    @FindBy(xpath = "//div[contains(@class, 'productinfo')]//p[contains(text(), '%s')]/preceding-sibling::h2")
+    @FindBy(css = ".productinfo.text-center h2")
     private ExtendedWebElement productPrice;
-    @FindBy(xpath = "//div[contains(@class, 'productinfo')]//p[contains(text(), '%s')]/preceding-sibling::img")
-    private ExtendedWebElement productImage;
-    @FindBy(xpath = "//div[contains(@class, 'productinfo')]//p[contains(text(), '%s')]/following-sibling::a")
+    @FindBy(css = ".btn.add-to-cart")
     private ExtendedWebElement addToCartButton;
-    @FindBy(xpath = "//div[contains(@class, 'productinfo')]//p[contains(text(), '%s')]/ancestor::div[@class='product-image-wrapper']//div[@class='choose']")
-    private ExtendedWebElement viewProductButton;
-    @FindBy(xpath = "//div[@class='productinfo text-center']/descendant::h2")
+    @FindBy(css = ".productinfo.text-center .add-to-cart")
+    private ExtendedWebElement hoverAddToCartButton;
+
+    @FindBy(css = ".productinfo.text-center h2")
     private List<ExtendedWebElement> productsPriceList;
-    @FindBy(xpath = "//div[@class='productinfo text-center']/descendant::p")
+    @FindBy(css = ".productinfo.text-center p")
     private List<ExtendedWebElement> productsTitleList;
 
     public AutomationProductsContainer(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
-    }
-
-    public boolean isContainerTitlePresent () {
-        return containerTitle.isPresent();
-    }
-
-    public String getContainerTitleXpath () {
-        return containerTitle.getLocation().toString();
     }
 
     public void clickProductTitle (String itemTitle) {
@@ -56,16 +45,12 @@ public class AutomationProductsContainer extends AbstractUIObject {
         return productPrice.format(itemTitle).getText();
     }
 
-    public String getImageUrl (String itemTitle) {
-        return productImage.format(itemTitle).getText();
-    }
-
     public void clickAddToCartButton (String itemTitle) {
         addToCartButton.format(itemTitle).click();
     }
 
-    public void clickViewProductButton (String itemTitle) {
-        viewProductButton.format(itemTitle).click();
+    public void clickHoverAddToCartButton() {
+        hoverAddToCartButton.click();
     }
 
     public List<String> getPricesList () {

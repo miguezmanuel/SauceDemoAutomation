@@ -1,7 +1,7 @@
 package com.solvd.carina.demo.gui.automationExercise.pages;
 
 import com.solvd.carina.demo.gui.automationExercise.common.AutomationBasePage;
-import com.solvd.carina.demo.gui.automationExercise.components.AutomationCartProducstTable;
+import com.solvd.carina.demo.gui.automationExercise.components.AutomationCartProductsTable;
 import org.openqa.selenium.WebDriver;
 
 public class AutomationCartPage extends AutomationBasePage {
@@ -10,7 +10,7 @@ public class AutomationCartPage extends AutomationBasePage {
     }
 
     @Override
-    public AutomationCartProducstTable getCartProductsTable() {
+    public AutomationCartProductsTable getCartProductsTable() {
         return super.getCartProductsTable();
     }
 }
