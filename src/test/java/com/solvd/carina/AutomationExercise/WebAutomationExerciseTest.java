@@ -1,4 +1,4 @@
-package com.solvd.carina.demo;
+package com.solvd.carina.AutomationExercise;
 
 import com.solvd.carina.demo.gui.automationExercise.components.*;
 import com.solvd.carina.demo.gui.automationExercise.pages.*;

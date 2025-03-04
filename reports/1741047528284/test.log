@@ -1,0 +1,27 @@
+[2025-03-04 12:18:48] [1] [INFO] 
+============= Basic configuration =============
+env=DEMO
+=========== Encryptor configuration ===========
+crypto_key_value=*****
+=========== WebDriver configuration ===========
+url=https://www.saucedemo.com/v1/
+browser_language=en
+selenium_url=http://localhost:4444/wd/hub
+auto_screenshot=true
+localization_encoding=UTF-8
+language=en_US
+-------------- Driver capabilities ------------
+browserName=chrome
+===============================================
+
+[2025-03-04 12:18:48] [1] [WARN] Reporting disabled: using no op test run registrar
+[2025-03-04 12:18:49] [1] [INFO] [TestNG] Running:
+  C:\Users\Manu\AppData\Local\JetBrains\IdeaIC2024.3\temp-testng-customsuite.xml
+
+[2025-03-04 12:18:49] [1] [INFO] Set thread-count=1
+[2025-03-04 12:18:49] [1] [INFO] Set data-provider-thread-count=1
+[2025-03-04 12:18:49] [1] [INFO] CARINA_CORE_VERSION: 1.1.3
+[2025-03-04 12:18:50] [1] [INFO] INFO: '**************** Test execution summary ****************'.
+[2025-03-04 12:18:50] [1] [INFO] RESULT #1: TEST [WebTestAutomation - loginWithInvalidCredentials] FAIL [log=file://E:\Code\Java\WebTestAutomation\.\reports\1741047528284/603c5ee3-340a-4763-bfd6-e7f6721e42c1/test.log]
+[2025-03-04 12:18:50] [1] [INFO] RESULT #2: TEST [WebTestAutomation - loginWithLockedOutUser] FAIL [log=file://E:\Code\Java\WebTestAutomation\.\reports\1741047528284/82ccb244-0f8a-4909-80a2-83f745c6ba2f/test.log]
+[2025-03-04 12:18:50] [1] [INFO] RESULT #3: TEST [WebTestAutomation - loginWithValidCredentials] FAIL [log=file://E:\Code\Java\WebTestAutomation\.\reports\1741047528284/e9d4af20-215d-4dc6-a863-0ec76dac462b/test.log]
