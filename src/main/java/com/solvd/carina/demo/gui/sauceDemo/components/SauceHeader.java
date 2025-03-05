@@ -1,6 +1,5 @@
 package com.solvd.carina.demo.gui.sauceDemo.components;
 
-import com.solvd.carina.demo.gui.sauceDemo.common.SauceBasePage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -15,7 +14,7 @@ public class SauceHeader extends AbstractUIObject {
     @FindBy(id = "logout_sidebar_link")
     private ExtendedWebElement logoutButton;
 
-    @FindBy(css = ".shopping_cart_link")
+    @FindBy(id = "shopping_cart_container")
     private ExtendedWebElement cartButton;
 
     protected SauceHeader(WebDriver driver, SearchContext searchContext) {

@@ -11,13 +11,13 @@ import java.util.Set;
 
 public class SauceFooter extends AbstractUIObject {
 
-    @FindBy(css = "a[href='https://twitter.com/saucelabs']")
+    @FindBy(className = "social_twitter")
     private ExtendedWebElement twitterLink;
 
-    @FindBy(css = "a[href='https://www.facebook.com/saucelabs']")
+    @FindBy(className = "social_facebook")
     private ExtendedWebElement facebookLink;
 
-    @FindBy(css = "a[href='https://www.linkedin.com/company/sauce-labs/']")
+    @FindBy(className = "social_linkedin")
     private ExtendedWebElement linkedinLink;
 
     protected SauceFooter(WebDriver driver, SearchContext searchContext) {

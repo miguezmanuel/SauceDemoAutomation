@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class SauceBasePage extends AbstractPage {
 
-    @FindBy(css = ".header")
+    @FindBy(css = ".header_container")
     private SauceHeader header;
     @FindBy(css = ".footer")
     private SauceFooter footer;

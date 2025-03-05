@@ -11,13 +11,13 @@ import java.util.List;
 
 public class SauceCartPage extends SauceBasePage {
 
-    @FindBy(css = ".cart_item")
+    @FindBy(css = ".cart_item_label .inventory_item_name")
     private List<ExtendedWebElement> cartItems;
 
-    @FindBy(css = ".checkout_button")
+    @FindBy(css = "a.btn_action.checkout_button")
     private ExtendedWebElement checkoutButton;
 
-    @FindBy(xpath = "//button[contains(text(), 'Remove')]")
+    @FindBy(css = "button.btn_secondary.cart_button")
     private List<ExtendedWebElement> removeButtons;
 
     public SauceCartPage(WebDriver driver) {

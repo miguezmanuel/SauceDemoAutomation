@@ -25,11 +25,11 @@ public class SauceInventoryPage extends SauceBasePage {
     @FindBy(css = ".inventory_item .btn_inventory")
     private List<ExtendedWebElement> addToCartButtons;
 
-    @FindBy(css = ".inventory_item_price")
-    private List<ExtendedWebElement> productPrices;
-
     @FindBy(css = ".inventory_item_name")
     private List<ExtendedWebElement> productNames;
+
+    @FindBy(css = ".inventory_item_price")
+    private List<ExtendedWebElement> productPrices;
 
     public SauceInventoryPage(WebDriver driver) {
         super(driver);

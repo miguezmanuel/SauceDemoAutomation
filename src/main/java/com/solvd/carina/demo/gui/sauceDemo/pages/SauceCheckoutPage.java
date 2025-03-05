@@ -18,10 +18,10 @@ public class SauceCheckoutPage extends SauceBasePage {
     @FindBy(id = "postal-code")
     private ExtendedWebElement zipInput;
 
-    @FindBy(id = "continue")
+    @FindBy(css = "input.btn_primary.cart_button")
     private ExtendedWebElement continueButton;
 
-    @FindBy(id = "finish")
+    @FindBy(css = "a.btn_action.cart_button")
     private ExtendedWebElement finishButton;
 
     @FindBy(css = ".complete-header")
