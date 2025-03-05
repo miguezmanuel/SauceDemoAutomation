@@ -6,7 +6,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class SauceHeader extends AbstractUIObject {
+public class Header extends AbstractUIObject {
 
     @FindBy(id = "react-burger-menu-btn")
     private ExtendedWebElement menuButton;
@@ -17,7 +17,7 @@ public class SauceHeader extends AbstractUIObject {
     @FindBy(id = "shopping_cart_container")
     private ExtendedWebElement cartButton;
 
-    protected SauceHeader(WebDriver driver, SearchContext searchContext) {
+    protected Header(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 

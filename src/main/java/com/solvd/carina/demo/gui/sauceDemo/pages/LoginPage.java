@@ -1,11 +1,11 @@
 package com.solvd.carina.demo.gui.sauceDemo.pages;
 
-import com.solvd.carina.demo.gui.sauceDemo.common.SauceBasePage;
+import com.solvd.carina.demo.gui.sauceDemo.common.BasePage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class SauceLoginPage extends SauceBasePage {
+public class LoginPage extends BasePage {
 
     @FindBy(id = "user-name")
     private ExtendedWebElement usernameInput;
@@ -19,7 +19,7 @@ public class SauceLoginPage extends SauceBasePage {
     @FindBy(css = "h3[data-test='error']")
     private ExtendedWebElement errorMessage;
 
-    public SauceLoginPage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         super(driver);
     }
 

@@ -1,8 +1,8 @@
 package com.solvd.carina.SauceDemo.navigation;
 
-import com.solvd.carina.demo.gui.sauceDemo.components.SauceFooter;
-import com.solvd.carina.demo.gui.sauceDemo.pages.SauceInventoryPage;
-import com.solvd.carina.demo.gui.sauceDemo.pages.SauceLoginPage;
+import com.solvd.carina.demo.gui.sauceDemo.components.Footer;
+import com.solvd.carina.demo.gui.sauceDemo.pages.InventoryPage;
+import com.solvd.carina.demo.gui.sauceDemo.pages.LoginPage;
 import com.zebrunner.carina.core.IAbstractTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,10 +11,10 @@ public class NavigationTests implements IAbstractTest {
 
     @Test
     public void logoutTest() {
-        SauceLoginPage loginPage = new SauceLoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.login("standard_user", "secret_sauce");
 
-        SauceInventoryPage inventoryPage = new SauceInventoryPage(getDriver());
+        InventoryPage inventoryPage = new InventoryPage(getDriver());
         inventoryPage.getHeader().logout();
 
         Assert.assertTrue(loginPage.isLoginPageVisible(), "Logout failed!");
@@ -22,11 +22,11 @@ public class NavigationTests implements IAbstractTest {
 
     @Test
     public void verifySocialMediaLinks() {
-        SauceLoginPage loginPage = new SauceLoginPage(getDriver());
+        LoginPage loginPage = new LoginPage(getDriver());
         loginPage.login("standard_user", "secret_sauce");
 
-        SauceInventoryPage inventoryPage = new SauceInventoryPage(getDriver());
-        SauceFooter footer = inventoryPage.getFooter();
+        InventoryPage inventoryPage = new InventoryPage(getDriver());
+        Footer footer = inventoryPage.getFooter();
 
         footer.openTwitter();
         Assert.assertTrue(footer.isTwitterOpened(), "Twitter link did not work!");
