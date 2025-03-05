@@ -1,8 +1,8 @@
 package com.solvd.carina.demo.gui.sauceDemo.pages;
 
-import com.solvd.carina.demo.gui.sauceDemo.common.SauceBasePage;
-import com.solvd.carina.demo.gui.sauceDemo.components.SauceFooter;
-import com.solvd.carina.demo.gui.sauceDemo.components.SauceHeader;
+import com.solvd.carina.demo.gui.sauceDemo.common.BasePage;
+import com.solvd.carina.demo.gui.sauceDemo.components.Footer;
+import com.solvd.carina.demo.gui.sauceDemo.components.Header;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SauceInventoryPage extends SauceBasePage {
+public class InventoryPage extends BasePage {
 
     @FindBy(css = ".inventory_item")
     private List<ExtendedWebElement> productList;
@@ -31,7 +31,7 @@ public class SauceInventoryPage extends SauceBasePage {
     @FindBy(css = ".inventory_item_price")
     private List<ExtendedWebElement> productPrices;
 
-    public SauceInventoryPage(WebDriver driver) {
+    public InventoryPage(WebDriver driver) {
         super(driver);
     }
 
@@ -101,12 +101,12 @@ public class SauceInventoryPage extends SauceBasePage {
     }
 
     @Override
-    public SauceHeader getHeader() {
+    public Header getHeader() {
         return super.getHeader();
     }
 
     @Override
-    public SauceFooter getFooter() {
+    public Footer getFooter() {
         return super.getFooter();
     }
 }

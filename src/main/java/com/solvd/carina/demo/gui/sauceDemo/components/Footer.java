@@ -1,6 +1,5 @@
 package com.solvd.carina.demo.gui.sauceDemo.components;
 
-import com.solvd.carina.demo.gui.sauceDemo.common.SauceBasePage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import org.openqa.selenium.SearchContext;
@@ -9,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.Set;
 
-public class SauceFooter extends AbstractUIObject {
+public class Footer extends AbstractUIObject {
 
     @FindBy(className = "social_twitter")
     private ExtendedWebElement twitterLink;
@@ -20,7 +19,7 @@ public class SauceFooter extends AbstractUIObject {
     @FindBy(className = "social_linkedin")
     private ExtendedWebElement linkedinLink;
 
-    protected SauceFooter(WebDriver driver, SearchContext searchContext) {
+    protected Footer(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 

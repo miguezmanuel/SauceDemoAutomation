@@ -1,13 +1,13 @@
 package com.solvd.carina.demo.gui.sauceDemo.pages;
 
-import com.solvd.carina.demo.gui.sauceDemo.common.SauceBasePage;
-import com.solvd.carina.demo.gui.sauceDemo.components.SauceFooter;
-import com.solvd.carina.demo.gui.sauceDemo.components.SauceHeader;
+import com.solvd.carina.demo.gui.sauceDemo.common.BasePage;
+import com.solvd.carina.demo.gui.sauceDemo.components.Footer;
+import com.solvd.carina.demo.gui.sauceDemo.components.Header;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class SauceCheckoutPage extends SauceBasePage {
+public class CheckoutPage extends BasePage {
 
     @FindBy(id = "first-name")
     private ExtendedWebElement firstNameInput;
@@ -30,7 +30,7 @@ public class SauceCheckoutPage extends SauceBasePage {
     @FindBy(css = "[data-test='error']")
     private ExtendedWebElement errorMessage;
 
-    public SauceCheckoutPage(WebDriver driver) {
+    public CheckoutPage(WebDriver driver) {
         super(driver);
     }
 
@@ -54,12 +54,12 @@ public class SauceCheckoutPage extends SauceBasePage {
     }
 
     @Override
-    public SauceHeader getHeader() {
+    public Header getHeader() {
         return super.getHeader();
     }
 
     @Override
-    public SauceFooter getFooter() {
+    public Footer getFooter() {
         return super.getFooter();
     }
 }
